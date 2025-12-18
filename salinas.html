@@ -4,243 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salinas del Gualicho | Ocasión Turismo</title>
-    <meta name="description" content="Excursión a Salinas del Gualicho. Cena bajo las estrellas, brindis al atardecer y observación astronómica." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#FBBF24", 
-              secondary: "#1F2937",
-              "background-light": "#FFFFFF",
-              "text-main": "#1F2937",
-              "text-muted": "#4B5563",
-            },
-            fontFamily: {
-              display: ["Anton", "sans-serif"],
-              body: ["Montserrat", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <script> tailwind.config = { theme: { extend: { colors: { primary: "#FBBF24", secondary: "#1F2937", "background-light": "#FFFFFF", "text-main": "#1F2937", "text-muted": "#4B5563" }, fontFamily: { display: ["Anton", "sans-serif"], body: ["Montserrat", "sans-serif"] } } } }; </script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body class="bg-white text-text-main font-body antialiased">
-
     <div id="navbar-container"></div>
-
     <header class="relative pt-20">
         <div class="h-[55vh] w-full relative overflow-hidden group">
             <img alt="Atardecer en Salinas del Gualicho" class="w-full h-full object-cover" src="img/1.png"/>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            
             <div class="absolute bottom-0 left-0 w-full p-6 pb-10">
                 <div class="max-w-6xl mx-auto px-4">
-                    <div class="flex flex-wrap gap-3 mb-3">
-                        <span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Oferta Exclusiva</span>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-display text-white mb-2 drop-shadow-lg uppercase leading-none">
-                        Salinas del Gualicho
-                    </h1>
-                    <p class="text-lg text-gray-200 font-medium max-w-2xl drop-shadow-md flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">location_on</span> Las Grutas, Río Negro
-                    </p>
+                    <div class="flex flex-wrap gap-3 mb-3"><span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Oferta Exclusiva</span></div>
+                    <h1 class="text-4xl md:text-6xl font-display text-white mb-2 drop-shadow-lg uppercase leading-none tracking-wider">Salinas del Gualicho</h1>
+                    <p class="text-lg text-gray-200 font-medium max-w-2xl drop-shadow-md flex items-center gap-2"><span class="material-symbols-outlined text-primary">location_on</span> Las Grutas, Río Negro</p>
                 </div>
             </div>
         </div>
     </header>
-
     <main class="max-w-6xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
             <div class="lg:col-span-8 space-y-10">
-                
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-gray-100">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><span class="material-symbols-outlined text-xl">schedule</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-sm">16:00 - 00:00</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-green-50 rounded-lg text-green-600"><span class="material-symbols-outlined text-xl">directions_bus</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Transporte</p><p class="font-bold text-gray-900 text-sm">Bus / 4x4</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-purple-50 rounded-lg text-purple-600"><span class="material-symbols-outlined text-xl">restaurant</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Cena</p><p class="font-bold text-gray-900 text-sm">Pollo al Disco</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><span class="material-symbols-outlined text-xl">group</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Grupos</p><p class="font-bold text-gray-900 text-sm">Max 60</p></div>
-                    </div>
+                    <div class="flex items-center gap-3"><div class="p-2 bg-blue-50 rounded-lg text-blue-600"><span class="material-symbols-outlined text-xl">schedule</span></div><div><p class="text-[10px] text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-sm">16:00 - 00:00</p></div></div>
+                    <div class="flex items-center gap-3"><div class="p-2 bg-green-50 rounded-lg text-green-600"><span class="material-symbols-outlined text-xl">directions_bus</span></div><div><p class="text-[10px] text-gray-500 font-bold uppercase">Transporte</p><p class="font-bold text-gray-900 text-sm">Bus / 4x4</p></div></div>
+                    <div class="flex items-center gap-3"><div class="p-2 bg-purple-50 rounded-lg text-purple-600"><span class="material-symbols-outlined text-xl">restaurant</span></div><div><p class="text-[10px] text-gray-500 font-bold uppercase">Cena</p><p class="font-bold text-gray-900 text-sm">Pollo al Disco</p></div></div>
+                    <div class="flex items-center gap-3"><div class="p-2 bg-orange-50 rounded-lg text-orange-600"><span class="material-symbols-outlined text-xl">group</span></div><div><p class="text-[10px] text-gray-500 font-bold uppercase">Grupos</p><p class="font-bold text-gray-900 text-sm">Max 60</p></div></div>
                 </div>
 
                 <section class="prose prose-lg max-w-none text-gray-600">
-                    <h3 class="font-display text-2xl font-bold text-gray-900 uppercase">Una Pampa de Sal Infinita</h3>
-                    <p>
-                        Son las salinas más grandes de la República Argentina y las terceras del mundo. Una depresión de <strong>430 km² a 72 metros bajo el nivel del mar</strong>. Buenos Aires entraría más de dos veces en este inmenso manto blanco.
-                    </p>
-                    <p>
-                        El recorrido nos lleva a conocer la historia del Balneario, la estepa patagónica y la leyenda del ferrocarril. Visitaremos las instalaciones de la empresa minera que cosecha la sal, observando parvas gigantescas.
-                    </p>
-
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4">Atardecer en la Luna</h4>
-                    <p>
-                        En el corazón del Gualicho nos detenemos. El guía nos invita a descalzarnos y sentir la sal. El atardecer es un espectáculo: el cielo pasa de amarillo a rojo y finalmente al violeta. <strong>No podía faltar un buen brindis</strong> para sellar este momento mágico.
-                    </p>
-
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4">Bajo un Manto de Estrellas</h4>
-                    <p>
-                        A simple vista se ven Marte, Venus, Orión y la Cruz del Sur. Usamos <strong>binoculares y lentes infrarrojos</strong> para observar el cielo. Mientras tanto, el aroma del famoso <strong>pollo al disco</strong> nos invita a la cena. Acompañado de buen vino patagónico, cerramos la noche contando las misteriosas leyendas del Gualicho.
-                    </p>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 uppercase tracking-wide">Una Pampa de Sal Infinita</h3>
+                    <p>Son las salinas más grandes de la República Argentina y las terceras del mundo. Una depresión de <strong>430 km² a 72 metros bajo el nivel del mar</strong>. Buenos Aires entraría más de dos veces en este inmenso manto blanco.</p>
+                    <p>El recorrido nos lleva a conocer la historia del Balneario, la estepa patagónica y la leyenda del ferrocarril. Visitaremos las instalaciones de la empresa minera que cosecha la sal, observando parvas gigantescas.</p>
+                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide">Atardecer en la Luna</h4>
+                    <p>En el corazón del Gualicho nos detenemos. El guía nos invita a descalzarnos y sentir la sal. El atardecer es un espectáculo: el cielo pasa de amarillo a rojo y finalmente al violeta. <strong>No podía faltar un buen brindis</strong> para sellar este momento mágico.</p>
+                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide">Bajo un Manto de Estrellas</h4>
+                    <p>A simple vista se ven Marte, Venus, Orión y la Cruz del Sur. Usamos <strong>binoculares y lentes infrarrojos</strong> para observar el cielo. Mientras tanto, el aroma del famoso <strong>pollo al disco</strong> nos invita a la cena. Acompañado de buen vino patagónico, cerramos la noche contando las misteriosas leyendas del Gualicho.</p>
                 </section>
 
-                <section class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-sm">
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">backpack</span> Ficha del Explorador
-                    </h3>
+                <section class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-base">
+                    <h3 class="font-display text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 tracking-wide"><span class="material-symbols-outlined text-primary">backpack</span> Ficha del Explorador</h3>
                     <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <strong class="block text-gray-900 mb-1">Ropa Sugerida</strong>
-                            <p class="text-gray-600">Shorts/bermudas, remera clara, calzado de trekking. Sombrero y anteojos.</p>
-                        </div>
-                        <div>
-                            <strong class="block text-gray-900 mb-1">Para el Regreso</strong>
-                            <p class="text-gray-600">Buzo polar, campera con capucha y pantalones largos. ¡El desierto refresca!</p>
-                        </div>
-                        <div class="col-span-full">
-                            <strong class="block text-gray-900 mb-1">Indispensable</strong>
-                            <p class="text-gray-600">Protector solar, agua mineral, cámara de fotos y ¡buena onda!</p>
-                        </div>
+                        <div><strong class="block text-gray-900 mb-1">Ropa Sugerida</strong><p class="text-gray-600">Shorts/bermudas, remera clara, calzado de trekking. Sombrero y anteojos.</p></div>
+                        <div><strong class="block text-gray-900 mb-1">Para el Regreso</strong><p class="text-gray-600">Buzo polar, campera con capucha y pantalones largos. ¡El desierto refresca!</p></div>
+                        <div class="col-span-full"><strong class="block text-gray-900 mb-1">Indispensable</strong><p class="text-gray-600">Protector solar, agua mineral, cámara de fotos y ¡buena onda!</p></div>
                     </div>
                 </section>
 
-                <section>
-                    <details class="group border-t border-gray-200 py-3 cursor-pointer">
-                        <summary class="flex justify-between items-center font-bold text-gray-900 list-none text-sm hover:text-primary transition-colors">
-                            <span>Políticas de Cancelación y Devolución</span>
-                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
-                        </summary>
-                        <div class="pt-4 text-sm text-gray-700 space-y-3 leading-relaxed">
-    <p><strong>1. Clima:</strong> No se suspende por clima salvo cancelación de la empresa.</p>
-    <p><strong>2. Cancelación por la empresa:</strong> Se reprograma o se devuelve el 100%.</p>
-    <p><strong>3. Cancelación del pasajero:</strong><br>
-    - 72hs antes: 75% reintegro.<br>
-    - 48hs antes: 50% reintegro.<br>
-    - 24hs antes: 25% reintegro.<br>
-    - Menos de 12hs: Sin devolución.</p>
-</div>
-                    </details>
+                <section class="pt-4 border-t border-gray-100">
+                    <h4 class="font-display text-lg font-bold text-gray-900 mb-3 tracking-wide">Políticas de Cancelación y Devolución</h4>
+                    <div class="text-base text-gray-700 space-y-3 leading-relaxed bg-white">
+                        <p><strong>1. Clima:</strong> No se suspende por clima salvo cancelación de la empresa.</p>
+                        <p><strong>2. Cancelación por la empresa:</strong> Se reprograma o se devuelve el 100%.</p>
+                        <p><strong>3. Cancelación del pasajero:</strong><br>
+                        - 72hs antes: 75% reintegro.<br>
+                        - 48hs antes: 50% reintegro.<br>
+                        - 24hs antes: 25% reintegro.<br>
+                        - Menos de 12hs: Sin devolución.</p>
+                    </div>
                 </section>
-
             </div>
 
             <div class="lg:col-span-4">
                 <div class="sticky top-24 bg-white p-6 rounded-2xl shadow-[0_5px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 z-10">
                     <div class="text-center mb-6 pb-6 border-b border-gray-100">
                         <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Precio Online</p>
-                        <div class="flex items-center justify-center gap-2">
-                            <span class="text-4xl font-display font-extrabold text-gray-900">$150.000</span>
-                            <span class="text-sm font-medium text-gray-400">ARS</span>
-                        </div>
+                        <div class="flex items-center justify-center gap-2"><span class="text-4xl font-display font-extrabold text-gray-900">$150.000</span><span class="text-sm font-medium text-gray-400">ARS</span></div>
                         <p class="text-xs text-gray-500 mt-1">Por Adulto</p>
-                        
                         <div class="mt-4 bg-gray-50 rounded-lg p-3 text-left space-y-2">
-                            <div class="flex justify-between text-sm items-center">
-                                <span class="text-gray-600 font-medium">Menores (5-12)</span>
-                                <span class="font-bold text-gray-900">$100.000</span>
-                            </div>
+                            <div class="flex justify-between text-sm items-center"><span class="text-gray-600 font-medium">Menores (5-12)</span><span class="font-bold text-gray-900">$100.000</span></div>
                         </div>
                     </div>
-                    
                     <div class="space-y-3 mb-6">
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">calendar_month</span>
-                            <span>Salidas: Mar, Jue, Sáb</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">payments</span>
-                            <span>Pago: Transferencia / Efectivo</span>
-                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-green-500">calendar_month</span><span>Salidas: Mar, Jue, Sáb</span></div>
+                        <div class="flex items-center gap-3 text-sm text-gray-600"><span class="material-symbols-outlined text-green-500">payments</span><span>Pago: Transferencia / Efectivo</span></div>
                     </div>
-
-                    <button onclick="openBookingModal('Salinas del Gualicho')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 group">
-                         <span class="material-symbols-outlined">chat</span>
-                         Reservar por WhatsApp
-                    </button>
-                    
-                    <p class="text-[11px] text-center text-gray-400 mt-4 leading-tight">
-                        Al tocar el botón podrás seleccionar fecha y cantidad de pasajeros. La reserva se confirma con el pago.
-                    </p>
+                    <button onclick="openBookingModal('Salinas del Gualicho')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 group"><span class="material-symbols-outlined">chat</span> Reservar por WhatsApp</button>
+                    <p class="text-[11px] text-center text-gray-400 mt-4 leading-tight">Al tocar el botón podrás seleccionar fecha y cantidad de pasajeros. La reserva se confirma con el pago.</p>
                 </div>
             </div>
-
         </div>
     </main>
-
     <div id="footer-container"></div>
-
     <div id="booking-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all duration-300">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform scale-100 transition-transform">
             <div class="bg-primary p-4 flex justify-between items-center">
                 <h3 class="text-gray-900 font-display text-xl uppercase tracking-wide">Configurá tu Reserva</h3>
-                <button onclick="closeBookingModal()" class="text-gray-900 hover:bg-white/20 rounded-full p-1">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
+                <button onclick="closeBookingModal()" class="text-gray-900 hover:bg-white/20 rounded-full p-1"><span class="material-symbols-outlined">close</span></button>
             </div>
-            
             <div class="p-6 space-y-5">
-                <p class="text-sm text-gray-600 text-center">
-                    Completá los datos para enviar tu solicitud a la agencia por WhatsApp.
-                </p>
-
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Fecha Estimada</label>
-                    <input type="date" id="modal-date" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary">
-                </div>
-
+                <p class="text-sm text-gray-600 text-center">Completá los datos para enviar tu solicitud a la agencia por WhatsApp.</p>
+                <div><label class="block text-xs font-bold text-gray-700 uppercase mb-1">Fecha Estimada</label><input type="date" id="modal-date" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary"></div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Adultos</label>
-                        <select id="modal-adults" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary">
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Menores</label>
-                        <select id="modal-minors" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary">
-                            <option value="0" selected>0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3+">3+</option>
-                        </select>
-                    </div>
+                    <div><label class="block text-xs font-bold text-gray-700 uppercase mb-1">Adultos</label><select id="modal-adults" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div>
+                    <div><label class="block text-xs font-bold text-gray-700 uppercase mb-1">Menores</label><select id="modal-minors" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary"><option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3+">3+</option></select></div>
                 </div>
-
-                <div class="bg-blue-50 p-3 rounded-lg flex gap-3 items-start">
-                    <span class="material-symbols-outlined text-blue-600 text-lg mt-0.5">info</span>
-                    <p class="text-xs text-blue-800 leading-relaxed">
-                        El pago se realiza mediante <strong>transferencia bancaria</strong>. Los datos de la cuenta te serán enviados por WhatsApp al confirmar disponibilidad.
-                    </p>
-                </div>
-
-                <button onclick="sendToWhatsapp()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-xl hover:bg-primary hover:text-gray-900 transition-colors flex justify-center items-center gap-2">
-                    Continuar al Chat <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                </button>
+                <div class="bg-blue-50 p-3 rounded-lg flex gap-3 items-start"><span class="material-symbols-outlined text-blue-600 text-lg mt-0.5">info</span><p class="text-xs text-blue-800 leading-relaxed">El pago se realiza mediante <strong>transferencia bancaria</strong>. Los datos de la cuenta te serán enviados por WhatsApp al confirmar disponibilidad.</p></div>
+                <button onclick="sendToWhatsapp()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-xl hover:bg-primary hover:text-gray-900 transition-colors flex justify-center items-center gap-2">Continuar al Chat <span class="material-symbols-outlined text-lg">arrow_forward</span></button>
             </div>
         </div>
     </div>
-
     <script src="./js/components.js"></script>
     <script src="./js/main.js"></script>
 </body>

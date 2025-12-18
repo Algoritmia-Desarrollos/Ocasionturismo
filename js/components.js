@@ -10,7 +10,7 @@ function loadComponents() {
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
                     <a class="flex items-center gap-2 group" href="./">
-                        <img src="img/81240106-logo1.png" alt="Ocasión Turismo Logo" class="h-12 w-auto object-contain">
+                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" class="h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -87,7 +87,7 @@ function loadComponents() {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 lg:col-span-1">
                     <a class="flex items-center gap-2 group mb-6" href="./">
-                        <img src="img/66c19728-logo-footer.png" alt="Ocasión Turismo" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
+                        <img src="img/logolargoblanco.webp" alt="Ocasión Turismo" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
                         Somos una empresa dedicada a mostrarte lo mejor de la Patagonia Argentina con pasión y profesionalismo. Alojamiento propio en Las Grutas.
