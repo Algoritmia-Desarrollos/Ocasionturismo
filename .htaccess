@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# 1. Si el usuario escribe "archivo.html", redirigir a "archivo" (sin extensión) para limpiar la URL
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# 2. Si el usuario pide "archivo" (sin extensión), servir internamente "archivo.html"
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# 3. Forzar HTTPS (Opcional pero recomendado en Hostinger)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
