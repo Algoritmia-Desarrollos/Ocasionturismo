@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Inicio - Ocasión Turismo | Las Grutas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <title>Excursiones en Las Grutas | Ocasión Turismo - Desert Tracks</title>
+    <meta name="description" content="Descubrí las mejores excursiones en Las Grutas: Salinas del Gualicho, Fuerte Argentino, Safaris 4x4 y Península Valdés. Agencia de Viajes y Turismo experta." />
+    <meta name="keywords" content="Las Grutas, Excursiones, Turismo Patagonia, Salinas del Gualicho, Fuerte Argentino, Safari 4x4, Madryn, Río Negro" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ocasionturismo.com/" />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
@@ -27,15 +31,20 @@
               display: ["Anton", "sans-serif"],
               body: ["Montserrat", "sans-serif"],
             },
-            screens: {
-                '3xl': '1920px',
-            }
+            screens: { '3xl': '1920px' }
           },
         },
       };
     </script>
-
     <link rel="stylesheet" href="./css/style.css">
+    
+    <style>
+        .hero-pattern {
+            background-image: url('img/5.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 
 <body class="bg-white text-text-main font-body antialiased">
@@ -43,23 +52,23 @@
     <div id="navbar-container"></div>
 
     <header class="relative h-[90vh] flex items-center justify-center hero-pattern overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/20 to-white"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent"></div>
         
         <div class="relative z-10 text-center px-4 max-w-7xl mx-auto mt-16 animate-fade-in-up">
             <div class="inline-block mb-4 animate-bounce">
                 <span class="bg-primary text-secondary font-bold px-4 py-1 uppercase tracking-wider text-sm rounded-full shadow-md">Más Argentino Que Ninguno</span>
             </div>
-            <h1 class="font-display text-5xl md:text-7xl lg:text-9xl mb-6 tracking-tight drop-shadow-sm leading-tight text-gray-900">
+            <h1 class="font-display text-5xl md:text-7xl lg:text-9xl mb-6 tracking-tight drop-shadow-lg leading-tight text-white">
                 DESCUBRÍ <span class="text-primary italic relative">LAS GRUTAS</span><br/>COMO NUNCA
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light text-gray-700">
-                Viví la emoción de conocer la Patagonia con guías expertos. Historia, naturaleza y aventura garantizada.
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light text-white drop-shadow-md">
+                Empresa de Viajes y Turismo con alojamiento propio. Expediciones 4x4 y experiencias únicas en la Patagonia.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a class="bg-primary hover:bg-yellow-400 text-gray-900 font-bold text-lg px-10 py-4 rounded shadow-[0_4px_0_rgb(0,0,0,0.2)] hover:shadow-[0_2px_0_rgb(0,0,0,0.2)] hover:translate-y-[2px] transition-all uppercase tracking-wide" href="#excursiones">
                     Ver Excursiones
                 </a>
-                <a class="bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold text-lg px-10 py-4 rounded transition-colors uppercase tracking-wide" href="#contacto">
+                <a class="bg-white/10 backdrop-blur-md border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold text-lg px-10 py-4 rounded transition-colors uppercase tracking-wide" href="#contacto">
                     Contactanos
                 </a>
             </div>
@@ -73,26 +82,26 @@
     <section id="features" class="py-20 bg-white relative z-10">
         <div class="max-w-[95%] mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
+                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
                     <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary group-hover:bg-primary group-hover:text-secondary transition-colors">
                         <span class="material-symbols-outlined text-4xl">landscape</span>
                     </div>
-                    <h3 class="font-display text-3xl mb-3 text-gray-900">Paisajes Únicos</h3>
-                    <p class="text-lg text-gray-600">Recorre cañadones, grutas y costas vírgenes que solo los locales conocen.</p>
+                    <h3 class="font-display text-3xl mb-3 text-gray-900">Camiones Históricos</h3>
+                    <p class="text-lg text-gray-600">Propuestas originales en excursiones todoterreno con camiones 4x4 y 6x6 únicos en la región.</p>
                 </div>
-                <div class="p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
+                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
                     <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary group-hover:bg-primary group-hover:text-secondary transition-colors">
                         <span class="material-symbols-outlined text-4xl">verified_user</span>
                     </div>
-                    <h3 class="font-display text-3xl mb-3 text-gray-900">Aventura Segura</h3>
-                    <p class="text-lg text-gray-600">Seguridad y experiencia con guías profesionales en cada paso del camino.</p>
+                    <h3 class="font-display text-3xl mb-3 text-gray-900">Empresa Habilitada</h3>
+                    <p class="text-lg text-gray-600">Viajes a todo el país en combis y ómnibus habilitados por CNRT. Seguridad y confianza.</p>
                 </div>
-                <div class="p-8 bg-white rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.05)] border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
+                <div class="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 border-b-4 border-b-primary transition-all hover:-translate-y-2 duration-300 group">
                     <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary group-hover:bg-primary group-hover:text-secondary transition-colors">
-                        <span class="material-symbols-outlined text-4xl">groups</span>
+                        <span class="material-symbols-outlined text-4xl">hotel</span>
                     </div>
-                    <h3 class="font-display text-3xl mb-3 text-gray-900">Historia Local</h3>
-                    <p class="text-lg text-gray-600">Conocé la historia del lugar que marcó un antes y después en la Argentina.</p>
+                    <h3 class="font-display text-3xl mb-3 text-gray-900">Alojamiento Propio</h3>
+                    <p class="text-lg text-gray-600">Desert Tracks Rancho. Departamentos y habitaciones abiertos todo el año.</p>
                 </div>
             </div>
         </div>
@@ -109,116 +118,232 @@
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 2xl:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
-                    <div class="relative overflow-hidden h-80"> 
-                        <img alt="Salinas del gualicho" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?q=80&w=1000&auto=format&fit=crop" />
+                    <div class="relative overflow-hidden h-72"> 
+                        <img alt="Salinas del Gualicho" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/1.png" loading="lazy"/>
                          <div class="absolute top-4 right-4 bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Más Vendida</div>
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
                     </div>
-                    <div class="p-8 flex-1 flex flex-col relative -mt-10">
-                        <div class="bg-white p-4 rounded-xl shadow-md mb-4 w-fit">
-                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors leading-none">Salinas del Gualicho</h3>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors">Salinas del Gualicho</h3>
+                            <span class="bg-gray-100 text-gray-800 text-lg font-bold px-3 py-1 rounded border border-gray-200">$150.000</span>
                         </div>
-                        <p class="text-gray-600 text-base mb-6 line-clamp-3">
-                            Un mar de sal infinito. Disfrutá de uno de los atardeceres más impresionantes, cena bajo las estrellas y observación astronómica.
+                        <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                            Visita a las parvas de sal, brindis al atardecer y cena gourmet bajo las estrellas. Observación con lentes infrarrojos.
                         </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">timer</span> Medio Día / Noche</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">restaurant</span> Cena Gourmet</li>
-                            </ul>
-                            <a class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-4 rounded-xl transition-colors uppercase text-sm tracking-wider" href="salinas.html">Ver Detalles</a>
+                        <div class="mt-auto space-y-4">
+                            <div class="flex gap-4 text-xs text-gray-500 font-bold uppercase tracking-wide border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">directions_bus</span> Bus A/C</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">restaurant</span> Cena</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class="block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="salinas">Ver Detalles</a>
+                                <a class="block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="https://wa.me/5492920607061?text=Quiero%20reservar%20Salinas%20del%20Gualicho">Reservar Ahora</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
-                    <div class="relative overflow-hidden h-80">
-                        <img alt="Fuerte Argentino" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop" />
-                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                    <div class="relative overflow-hidden h-72">
+                        <img alt="Fuerte Argentino" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/2.png" loading="lazy"/>
                     </div>
-                    <div class="p-8 flex-1 flex flex-col relative -mt-10">
-                        <div class="bg-white p-4 rounded-xl shadow-md mb-4 w-fit">
-                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors leading-none">Fuerte Argentino</h3>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors">Fuerte Argentino</h3>
+                            <span class="bg-gray-100 text-gray-800 text-lg font-bold px-3 py-1 rounded border border-gray-200">$150.000</span>
                         </div>
-                        <p class="text-gray-600 text-base mb-6 line-clamp-3">
-                            Misterio y leyendas templarias. Viaje en camiones militares 6x6, sandboard en los médanos y asadazo frente al mar.
+                        <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                            Viaje en camiones militares 4x4 y 6x6. Sandboard en los médanos, asadazo frente al mar y conferencia sobre Templarios.
                         </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">timer</span> Día Completo</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">directions_car</span> Camión 6x6</li>
-                            </ul>
-                            <a class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-4 rounded-xl transition-colors uppercase text-sm tracking-wider" href="fuerte.html">Ver Detalles</a>
+                        <div class="mt-auto space-y-4">
+                            <div class="flex gap-4 text-xs text-gray-500 font-bold uppercase tracking-wide border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">directions_car</span> 6x6</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">restaurant</span> Asado</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class="block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="fuerte">Ver Detalles</a>
+                                <a class="block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="https://wa.me/5492920607061?text=Quiero%20reservar%20Fuerte%20Argentino">Reservar Ahora</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
-                    <div class="relative overflow-hidden h-80">
-                        <img alt="Safari a la Naturaleza" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1541410228-403eb8b2611e?q=80&w=1000&auto=format&fit=crop" />
+                    <div class="relative overflow-hidden h-72">
+                        <img alt="Safari Naturaleza" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/3.png" loading="lazy"/>
                         <div class="absolute top-4 right-4 bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Aventura</div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
                     </div>
-                    <div class="p-8 flex-1 flex flex-col relative -mt-10">
-                        <div class="bg-white p-4 rounded-xl shadow-md mb-4 w-fit">
-                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors leading-none">Safari Naturaleza</h3>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors">Safari Naturaleza</h3>
+                            <span class="bg-gray-100 text-gray-800 text-lg font-bold px-3 py-1 rounded border border-gray-200">$75.000</span>
                         </div>
-                        <p class="text-gray-600 text-base mb-6 line-clamp-3">
-                            Adrenalina pura en los médanos. Recorrido en camiones 4x4, visita a los pulperos y brindis con picada al atardecer.
+                        <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                            Safari en camiones militares 4x4. Villa de los Pulperos, trineo en los médanos, Piedras Coloradas y brindis frente al mar.
                         </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">timer</span> Medio Día</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">wine_bar</span> Brindis Incluido</li>
-                            </ul>
-                            <a class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-4 rounded-xl transition-colors uppercase text-sm tracking-wider" href="safari.html">Ver Detalles</a>
+                        <div class="mt-auto space-y-4">
+                            <div class="flex gap-4 text-xs text-gray-500 font-bold uppercase tracking-wide border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">local_shipping</span> 4x4</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">wine_bar</span> Picada</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class="block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="safari">Ver Detalles</a>
+                                <a class="block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="https://wa.me/5492920607061?text=Quiero%20reservar%20Safari%20Naturaleza">Reservar Ahora</a>
+                            </div>
                         </div>
                     </div>
                 </article>
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
-                    <div class="relative overflow-hidden h-80">
-                        <img alt="City Tour Punta Perdiz" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=1000&auto=format&fit=crop" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                    <div class="relative overflow-hidden h-72"> 
+                        <img alt="City Tour Punta Perdiz" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/4.png" loading="lazy"/>
                     </div>
-                    <div class="p-8 flex-1 flex flex-col relative -mt-10">
-                        <div class="bg-white p-4 rounded-xl shadow-md mb-4 w-fit">
-                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors leading-none">City Tour & Puerto</h3>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors">City Tour & Puerto</h3>
+                            <span class="bg-gray-100 text-gray-800 text-lg font-bold px-3 py-1 rounded border border-gray-200">$95.000</span>
                         </div>
-                        <p class="text-gray-600 text-base mb-6 line-clamp-3">
-                            Descubrí el Caribe Patagónico en Punta Perdiz, visitá el olivar más austral del mundo y recorré el Puerto San Antonio.
+                        <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                            City Tour Las Grutas con degustación en olivares. Punta Perdiz (Caribe Patagónico), snorkeling, La Lobería y Puerto San Antonio.
                         </p>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">timer</span> Día Completo</li>
-                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">tapas</span> Degustación</li>
-                            </ul>
-                            <a class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-4 rounded-xl transition-colors uppercase text-sm tracking-wider" href="city-tour.html">Ver Detalles</a>
+                        <div class="mt-auto space-y-4">
+                            <div class="flex gap-4 text-xs text-gray-500 font-bold uppercase tracking-wide border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">timer</span> Día Completo</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">tapas</span> Degustación</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class="block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="city-tour">Ver Detalles</a>
+                                <a class="block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="https://wa.me/5492920607061?text=Quiero%20reservar%20City%20Tour">Reservar Ahora</a>
+                            </div>
                         </div>
                     </div>
                 </article>
+
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
+                    <div class="relative overflow-hidden h-72">
+                        <img alt="Madryn y Ballenas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="img/5.png" loading="lazy"/>
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-display text-2xl text-gray-900 group-hover:text-primary transition-colors">Madryn & Valdés</h3>
+                            <span class="bg-gray-100 text-gray-800 text-lg font-bold px-3 py-1 rounded border border-gray-200">$150.000</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-6 line-clamp-3">
+                            Escapada de día completo. Santuario de ballenas, Puerto Pirámides, Centro Ameghino y City Tour en Puerto Madryn.
+                        </p>
+                        <div class="mt-auto space-y-4">
+                            <div class="flex gap-4 text-xs text-gray-500 font-bold uppercase tracking-wide border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">timer</span> Todo el Día</span>
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">sailing</span> Ballenas</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class="block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="madryn">Ver Detalles</a>
+                                <a class="block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="https://wa.me/5492920607061?text=Info%20Madryn%20y%20Valdes">Reservar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-primary relative overflow-hidden">
-        <div class="absolute inset-0 bg-secondary opacity-5 pattern-dots"></div>
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <span class="text-6xl text-gray-900/20 font-serif leading-none block h-8">"</span>
-            <p class="text-2xl md:text-4xl font-display text-gray-900 mb-8 italic leading-relaxed">
-                Una experiencia inolvidable. Los guías saben muchísimo y la energía del lugar es increíble. ¡Súper recomendado!
-            </p>
-            <div class="flex items-center justify-center gap-1 mb-4">
-                <span class="material-symbols-outlined text-gray-900 fill-current text-2xl">star</span>
-                <span class="material-symbols-outlined text-gray-900 fill-current text-2xl">star</span>
-                <span class="material-symbols-outlined text-gray-900 fill-current text-2xl">star</span>
-                <span class="material-symbols-outlined text-gray-900 fill-current text-2xl">star</span>
-                <span class="material-symbols-outlined text-gray-900 fill-current text-2xl">star</span>
+    <section class="py-0 relative bg-black border-y-8 border-primary/20">
+        <div class="relative z-10 pt-16 pb-4 text-center text-white">
+            <h2 class="font-display text-4xl mb-4 tracking-wide uppercase">Galería <span class="text-primary">Inmersiva</span></h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-8 px-4">Filtrá por excursión y descubrí la magia de la Patagonia.</p>
+            
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 px-4">
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all bg-primary text-gray-900 border-transparent" data-category="salinas">Salinas</button>
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all" data-category="fuerte">Fuerte</button>
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all" data-category="safari">Safari</button>
+                <button class="gallery-tab px-6 py-2 rounded-full border border-white/30 text-white text-sm font-bold uppercase tracking-wider hover:bg-white/10 transition-all" data-category="city">City Tour</button>
             </div>
-            <p class="text-gray-900 font-bold mt-2 uppercase tracking-wide text-lg">- Turista en TripAdvisor</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pb-16 pt-8">
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                </div>
+            
+            <div class="text-center mt-10">
+                <button id="load-more-btn" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-bold py-3 px-8 rounded-full transition-all uppercase text-sm tracking-widest">
+                    Cargar Más Fotos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative order-2 lg:order-1">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-gray-100">
+                        <img alt="Equipo Desert Tracks" class="w-full h-[500px] object-cover" src="img/3.png" loading="lazy"/>
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/30 rounded-full blur-3xl -z-10"></div>
+                </div>
+                <div class="w-full lg:w-1/2 space-y-8 order-1 lg:order-2">
+                    <div>
+                        <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Desert Tracks EVT 17.793</span>
+                        <h2 class="font-display text-4xl md:text-6xl text-gray-900 leading-tight">
+                            Pasión por la <br/><span class="text-primary relative inline-block">Patagonia<span class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 skew-x-12"></span></span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Somos una <strong>Empresa de Viajes & Turismo</strong> con alojamiento propio en Las Grutas (Desert Tracks Rancho). Ofrecemos propuestas originales en excursiones todoterreno con camiones históricos 4x4 y 6x6.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Realizamos viajes en privado y a la carta, exploración de la Patagonia y traslados aeropuerto-hotel. También ofrecemos catering de campaña y cursos de manejo 4x4.
+                    </p>
+                    <div class="pt-4">
+                        <a class="inline-flex items-center gap-3 bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-4 px-8 rounded-lg transition-all hover:shadow-lg uppercase text-sm tracking-wider group" href="about">
+                            Conoce nuestro Rancho
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-widest uppercase mb-2 block">Resolvemos tus dudas</span>
+                <h2 class="font-display text-4xl md:text-5xl text-gray-900 uppercase">Preguntas <span class="text-primary">Frecuentes</span></h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-display text-lg text-gray-900 tracking-wide">¿Cómo reservo alojamiento en Desert Tracks Rancho?</span>
+                        <span class="material-symbols-outlined text-primary text-2xl transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent group-open:border-gray-100 animate-fade-in-up">
+                        <p class="mt-2">Contamos con departamentos y habitaciones abiertos todo el año. Consultanos por WhatsApp para ver paquetes y programas vigentes.</p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-display text-lg text-gray-900 tracking-wide">¿Hacen traslados al aeropuerto?</span>
+                        <span class="material-symbols-outlined text-primary text-2xl transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent group-open:border-gray-100 animate-fade-in-up">
+                        <p class="mt-2">Sí, realizamos transfer Aeropuerto-Las Grutas-Aeropuerto y viajes a todo el país en combis habilitadas por CNRT.</p>
+                    </div>
+                </details>
+                <details class="group bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden border border-gray-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-display text-lg text-gray-900 tracking-wide">¿Qué métodos de pago aceptan?</span>
+                        <span class="material-symbols-outlined text-primary text-2xl transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="p-6 pt-0 text-gray-600 leading-relaxed border-t border-transparent group-open:border-gray-100 animate-fade-in-up">
+                        <p class="mt-2">Aceptamos efectivo, transferencias y tarjetas. Consultá por promociones vigentes.</p>
+                    </div>
+                </details>
+            </div>
         </div>
     </section>
 

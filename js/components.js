@@ -3,18 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadComponents() {
-    // --- NAVBAR ---
- // --- NAVBAR (Versión URLs Limpias) ---
+    // --- NAVBAR (Menú Superior Mejorado) ---
     const navbarHTML = `
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
         <div class="max-w-[95%] mx-auto px-4">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
-                    <a class="flex items-center gap-2 group" href="./"> <div class="bg-primary text-gray-900 font-display px-2 py-1 text-2xl skew-x-[-10deg]">OT</div>
-                        <div class="flex flex-col leading-none">
-                            <span class="font-display text-xl tracking-wide uppercase group-hover:text-primary transition-colors text-gray-900">OCASIÓN</span>
-                            <span class="text-xs tracking-[0.2em] font-bold text-gray-500">TURISMO</span>
-                        </div>
+                    <a class="flex items-center gap-2 group" href="./">
+                        <img src="img/81240106-logo1.png" alt="Ocasión Turismo Logo" class="h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -22,15 +18,26 @@ function loadComponents() {
                     <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="./">Inicio</a>
                     
                     <div class="relative group">
-                        <button class="flex items-center gap-1 nav-link text-sm font-bold uppercase tracking-wider text-gray-600 group-hover:text-primary transition-colors focus:outline-none">
+                        <button class="flex items-center gap-1 nav-link text-sm font-bold uppercase tracking-wider text-gray-600 group-hover:text-primary transition-colors focus:outline-none py-4">
                             Expediciones
-                            <span class="material-symbols-outlined text-lg">expand_more</span>
+                            <span class="material-symbols-outlined text-lg transition-transform group-hover:rotate-180">expand_more</span>
                         </button>
-                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 overflow-hidden">
-                            <a href="salinas" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-b border-gray-50">Salinas del Gualicho</a>
-                            <a href="fuerte" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-b border-gray-50">Fuerte Argentino</a>
-                            <a href="safari" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-medium border-b border-gray-50">Safari a la Naturaleza</a>
-                            <a href="city-tour" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary font-medium">City Tour & Puerto</a>
+                        
+                        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                            <div class="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
+                                <a href="salinas" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                                    Salinas del Gualicho
+                                </a>
+                                <a href="fuerte" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                                    Fuerte Argentino
+                                </a>
+                                <a href="safari" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                                    Safari a la Naturaleza
+                                </a>
+                                <a href="city-tour" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold transition-all duration-200">
+                                    City Tour & Puerto
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -46,16 +53,26 @@ function loadComponents() {
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-20 shadow-lg">
-            <div class="px-4 pt-2 pb-6 space-y-2">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-20 shadow-lg h-screen overflow-y-auto pb-20">
+            <div class="px-4 pt-4 pb-6 space-y-2">
                 <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="./">Inicio</a>
-                <div class="pl-4 border-l-2 border-gray-100 ml-4 space-y-2">
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 mt-2">Expediciones</p>
-                    <a class="block py-2 text-sm font-medium text-gray-600 hover:text-primary" href="salinas">Salinas del Gualicho</a>
-                    <a class="block py-2 text-sm font-medium text-gray-600 hover:text-primary" href="fuerte">Fuerte Argentino</a>
-                    <a class="block py-2 text-sm font-medium text-gray-600 hover:text-primary" href="safari">Safari a la Naturaleza</a>
-                    <a class="block py-2 text-sm font-medium text-gray-600 hover:text-primary" href="city-tour">City Tour</a>
+                
+                <div class="bg-gray-50 rounded-xl p-4 space-y-3">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Expediciones</p>
+                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="salinas">
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Salinas del Gualicho
+                    </a>
+                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="fuerte">
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Fuerte Argentino
+                    </a>
+                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="safari">
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Safari a la Naturaleza
+                    </a>
+                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="city-tour">
+                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> City Tour
+                    </a>
                 </div>
+
                 <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="about">Nosotros</a>
                 <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="#contacto">Contacto</a>
             </div>
@@ -63,26 +80,22 @@ function loadComponents() {
     </nav>
     `;
 
-    // --- FOOTER ---
+    // --- FOOTER (Versión Oscura Original) ---
     const footerHTML = `
     <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800" id="contacto">
         <div class="max-w-[95%] mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 lg:col-span-1">
-                    <a class="flex items-center gap-2 group mb-6" href="index.html">
-                        <div class="bg-primary text-gray-900 font-display px-2 py-1 text-2xl skew-x-[-10deg]">OT</div>
-                        <div class="flex flex-col leading-none">
-                            <span class="font-display text-xl tracking-wide uppercase text-white">OCASIÓN</span>
-                            <span class="text-xs tracking-[0.2em] font-bold text-gray-400">TURISMO</span>
-                        </div>
+                    <a class="flex items-center gap-2 group mb-6" href="./">
+                        <img src="img/66c19728-logo-footer.png" alt="Ocasión Turismo" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
                     </a>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Somos una empresa dedicada a mostrarte lo mejor de la Patagonia Argentina con pasión y profesionalismo.
+                        Somos una empresa dedicada a mostrarte lo mejor de la Patagonia Argentina con pasión y profesionalismo. Alojamiento propio en Las Grutas.
                     </p>
                 </div>
 
                 <div class="col-span-1 lg:col-span-1">
-                    <h4 class="font-display text-xl mb-6 text-primary">Contacto</h4>
+                    <h4 class="font-display text-xl mb-6 text-primary font-bold">Contacto</h4>
                     <ul class="space-y-4 text-gray-300">
                         <li class="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
                             <span class="material-symbols-outlined text-primary mt-1 group-hover:scale-110 transition-transform">location_on</span>
@@ -100,12 +113,12 @@ function loadComponents() {
                 </div>
 
                 <div class="col-span-1 lg:col-span-1">
-                    <h4 class="font-display text-xl mb-6 text-primary">Explorar</h4>
+                    <h4 class="font-display text-xl mb-6 text-primary font-bold">Explorar</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a class="hover:text-primary hover:pl-2 transition-all" href="index.html">Inicio</a></li>
-                        <li><a class="hover:text-primary hover:pl-2 transition-all" href="index.html#excursiones">Nuestras Excursiones</a></li>
-                        <li><a class="hover:text-primary hover:pl-2 transition-all" href="about.html">Sobre Nosotros</a></li>
-                        <li><a class="hover:text-primary hover:pl-2 transition-all" href="#contacto">Contacto</a></li>
+                        <li><a class="hover:text-white hover:pl-2 transition-all" href="./">Inicio</a></li>
+                        <li><a class="hover:text-white hover:pl-2 transition-all" href="salinas">Nuestras Excursiones</a></li>
+                        <li><a class="hover:text-white hover:pl-2 transition-all" href="about">Sobre Nosotros</a></li>
+                        <li><a class="hover:text-white hover:pl-2 transition-all" href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
 
@@ -122,7 +135,7 @@ function loadComponents() {
             </div>
 
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                <p>© 2025 Ocasion Turismo. Todos los derechos reservados.</p>
+                <p>© 2026 Diseñado con precisión por <strong>Algoritmia</strong></p>
                 <div class="flex gap-6">
                     <a class="hover:text-white transition-colors" href="#">Privacidad</a>
                     <a class="hover:text-white transition-colors" href="#">Términos</a>
@@ -132,14 +145,14 @@ function loadComponents() {
     </footer>
     `;
 
-    // Inject into DOM
+    // Inyectar en el DOM
     const navbarContainer = document.getElementById('navbar-container');
     const footerContainer = document.getElementById('footer-container');
 
     if (navbarContainer) navbarContainer.innerHTML = navbarHTML;
     if (footerContainer) footerContainer.innerHTML = footerHTML;
 
-    // Initialize Mobile Logic after injection
+    // Inicializar lógica móvil
     initMobileMenu();
 }
 

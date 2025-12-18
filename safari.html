@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Safari Naturaleza - Ocasión Turismo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safari a la Naturaleza | Ocasión Turismo</title>
+    
+    <meta name="description" content="Safari a la Naturaleza en Las Grutas. Camiones militares 4x4, trineo en médanos, visita a pulperos y fósiles marinos. Excursión ideal para familias." />
+    
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: { primary: "#FBBF24", "background-light": "#FFFFFF", "text-main": "#1F2937" },
-            fontFamily: { display: ["Anton", "sans-serif"], body: ["Montserrat", "sans-serif"] },
+            colors: {
+              primary: "#FBBF24", 
+              secondary: "#1F2937",
+              "background-light": "#FFFFFF",
+              "text-main": "#1F2937",
+              "text-muted": "#4B5563",
+            },
+            fontFamily: {
+              display: ["Anton", "sans-serif"],
+              body: ["Montserrat", "sans-serif"],
+            },
           },
         },
       };
@@ -25,16 +40,23 @@
     <div id="navbar-container"></div>
 
     <header class="relative pt-20">
-        <div class="h-[50vh] md:h-[65vh] w-full relative overflow-hidden group">
-            <img alt="Safari 4x4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1541410228-403eb8b2611e?q=80&w=2000&auto=format&fit=crop"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 pb-16">
+        <div class="h-[60vh] md:h-[70vh] w-full relative overflow-hidden group">
+            <img alt="Camión Safari en la playa" class="w-full h-full object-cover" src="img/3.png"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            
+            <div class="absolute bottom-0 left-0 w-full p-6 md:p-12 pb-12">
                 <div class="max-w-[95%] mx-auto px-4">
-                    <div class="inline-block bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider shadow-lg animate-bounce">Pura Adrenalina</div>
-                    <h1 class="text-5xl md:text-7xl font-display text-gray-900 mb-2 drop-shadow-sm uppercase">Safari a la Naturaleza</h1>
-                    <p class="text-lg md:text-xl text-gray-700 font-medium flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">local_shipping</span>
-                        Camiones 4x4 • Médanos • Brindis
+                    <div class="flex flex-wrap gap-3 mb-4">
+                        <span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Aventura Familiar</span>
+                        <span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+                            <span class="material-symbols-outlined text-sm">local_shipping</span> Camiones Históricos
+                        </span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-display text-white mb-4 drop-shadow-lg uppercase leading-none">
+                        Safari a la <br/><span class="text-primary">Naturaleza</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 font-medium max-w-2xl leading-relaxed drop-shadow-md">
+                        Médanos, fósiles y mar. Una expedición didáctica y divertida en camiones militares 4x4 hasta El Sótano.
                     </p>
                 </div>
             </div>
@@ -43,53 +65,155 @@
 
     <main class="max-w-[95%] mx-auto px-4 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
             <div class="lg:col-span-2 space-y-12">
-                <div class="flex flex-wrap gap-4 md:gap-8 py-8 border-y border-gray-100">
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-gray-100">
                     <div class="flex items-center gap-3">
                         <div class="p-3 bg-blue-50 rounded-xl text-blue-600"><span class="material-symbols-outlined text-2xl">timer</span></div>
-                        <div><p class="text-xs text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-lg">Medio Día</p></div>
+                        <div><p class="text-xs text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-sm">4 a 6 Horas</p></div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-green-50 rounded-xl text-green-600"><span class="material-symbols-outlined text-2xl">directions_car</span></div>
+                        <div><p class="text-xs text-gray-500 font-bold uppercase">Transporte</p><p class="font-bold text-gray-900 text-sm">Camión 4x4 / 6x6</p></div>
                     </div>
                     <div class="flex items-center gap-3">
                         <div class="p-3 bg-purple-50 rounded-xl text-purple-600"><span class="material-symbols-outlined text-2xl">wine_bar</span></div>
-                        <div><p class="text-xs text-gray-500 font-bold uppercase">Extra</p><p class="font-bold text-gray-900 text-lg">Brindis c/ Picada</p></div>
+                        <div><p class="text-xs text-gray-500 font-bold uppercase">Extra</p><p class="font-bold text-gray-900 text-sm">Brindis en la Playa</p></div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-orange-50 rounded-xl text-orange-600"><span class="material-symbols-outlined text-2xl">downhill_skiing</span></div>
+                        <div><p class="text-xs text-gray-500 font-bold uppercase">Diversión</p><p class="font-bold text-gray-900 text-sm">Trineo en Arena</p></div>
                     </div>
                 </div>
 
-                <section class="prose max-w-none text-gray-600">
-                    <h2 class="font-display text-3xl font-bold text-gray-900 mb-6 uppercase">Adrenalina en los Médanos</h2>
-                    <p class="text-lg leading-relaxed mb-4">Viví una experiencia única a bordo de auténticos <strong>camiones militares 4x4</strong>. Recorremos las playas del sur y atravesamos dunas para llegar a los rincones más vírgenes de Las Grutas.</p>
+                <section class="prose max-w-none text-gray-600 space-y-6">
+                    <h2 class="font-display text-3xl font-bold text-gray-900 uppercase">Explorando el Camino de los Pulperos</h2>
+                    <p class="text-lg leading-relaxed">
+                        El recorrido se dirige hacia el sur por una ruta de ripio que acompaña la Costa Atlántica. Nuestra primera parada es la <strong>Villa de los Pulperos</strong>, donde descubriremos los secretos de los recolectores del "Octopus Tehuelchus", el pulpito más pequeño del mundo y sustento de los primeros pobladores.
+                    </p>
+                    
+                    <h3 class="font-display text-2xl font-bold text-gray-900 pt-4 uppercase">Adrenalina en Piedras Coloradas</h3>
+                    <p class="leading-relaxed">
+                        Avanzando hacia el sur llegamos a Piedras Coloradas, famosa por sus rocas precámbricas rojizas. Aquí es momento de diversión: aprovechamos los médanos para deslizarnos en <strong>trineos de arena</strong>. Una actividad segura y emocionante para toda la familia.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 my-8">
+                        <img src="img/3-4.webp" alt="Camión en Médanos" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500">
+                        <img src="img/3-5.webp" alt="Brindis Safari" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <h3 class="font-display text-2xl font-bold text-gray-900 pt-4 uppercase">El Sótano y los Fósiles</h3>
+                    <p class="leading-relaxed">
+                        Llegamos a <strong>El Sótano</strong>, el punto con la mayor diferencia de mareas del país. Realizaremos una caminata por el <strong>Cañadón de las Ostras</strong>, rodeados de fósiles marinos de 15 millones de años y aguas turquesas. La experiencia culmina con un espectacular brindis frente al mar.
+                    </p>
+
+                    <div class="bg-primary/10 border-l-4 border-primary p-6 rounded-r-xl mt-6">
+                        <h4 class="font-bold text-gray-900 uppercase mb-2">Opción Invierno / Primavera</h4>
+                        <p class="text-sm m-0 text-gray-700">
+                            En temporada baja, ofrecemos esta excursión en camioneta 4x4 privada (máx 5 pax) con un almuerzo especial: <strong>Wok de verduras y carnes patagónicas frente al mar</strong>, acompañado de vinos locales. ¡Consultanos!
+                        </p>
+                    </div>
+                </section>
+
+                <section class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">backpack</span> Ficha del Explorador
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-green-600 mt-1">check_circle</span>
+                            <div>
+                                <strong class="block text-gray-900">Ropa Sugerida</strong>
+                                <p class="text-sm text-gray-600">Traje de baño, remera clara, sandalias o zapatillas. Sombrero y anteojos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-blue-600 mt-1">check_circle</span>
+                            <div>
+                                <strong class="block text-gray-900">Indispensable</strong>
+                                <p class="text-sm text-gray-600"><strong>Toalla para secarse</strong>, protector solar, agua mineral y buena onda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-600 mt-1">check_circle</span>
+                            <div>
+                                <strong class="block text-gray-900">Para el Regreso</strong>
+                                <p class="text-sm text-gray-600">Rompevientos o buzo con capucha, ya que suele levantarse viento por la tarde.</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
-                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3"><span class="w-2 h-8 bg-primary rounded-full"></span>Lo que incluye</h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
-                            <div class="bg-primary/10 p-3 rounded-full text-primary"><span class="material-symbols-outlined">downhill_skiing</span></div>
-                            <div><h4 class="font-bold text-lg text-gray-900 mb-1 font-display uppercase">Sandboard</h4><p class="text-sm text-gray-500">Deslizate por los médanos.</p></div>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
-                            <div class="bg-primary/10 p-3 rounded-full text-primary"><span class="material-symbols-outlined">tapas</span></div>
-                            <div><h4 class="font-bold text-lg text-gray-900 mb-1 font-display uppercase">Brindis</h4><p class="text-sm text-gray-500">Picada frente al mar.</p></div>
-                        </div>
-                    </div>
+                    <details class="group border-t border-gray-200 py-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-gray-900 list-none">
+                            <span>Políticas de Cancelación y Devolución</span>
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="pt-4 text-sm text-gray-700 space-y-3 leading-relaxed">
+    <p><strong>1. Clima:</strong> No se suspende por clima salvo cancelación de la empresa.</p>
+    <p><strong>2. Cancelación por la empresa:</strong> Se reprograma o se devuelve el 100%.</p>
+    <p><strong>3. Cancelación del pasajero:</strong><br>
+    - 72hs antes: 75% reintegro.<br>
+    - 48hs antes: 50% reintegro.<br>
+    - 24hs antes: 25% reintegro.<br>
+    - Menos de 12hs: Sin devolución.</p>
+</div>
+                    </details>
                 </section>
+
             </div>
 
             <div class="lg:col-span-1">
-                <div class="sticky top-28 bg-white p-8 rounded-3xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100">
-                    <div class="text-center mb-8">
-                        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Precio por Adulto</p>
-                        <span class="text-5xl font-display font-extrabold text-gray-900">$75.000</span>
+                <div class="sticky top-24 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 z-10">
+                    <div class="text-center mb-6 pb-6 border-b border-gray-100">
+                        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-2">Precio Online</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-5xl font-display font-extrabold text-gray-900">$75.000</span>
+                            <span class="text-lg font-medium text-gray-400">ARS</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Por Adulto</p>
+                        
+                        <div class="mt-4 bg-gray-50 rounded-lg p-3 text-left space-y-1">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Menores (5-12)</span>
+                                <span class="font-bold text-gray-900">$50.000</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Menores de 5</span>
+                                <span class="font-bold text-primary">Consultar</span>
+                            </div>
+                        </div>
                     </div>
-                    <a href="https://wa.me/5492920607061?text=Quiero%20reservar%20Safari" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1">
-                         <span class="material-symbols-outlined text-2xl">chat</span> Reservar por WhatsApp
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-sm text-gray-700">
+                            <span class="material-symbols-outlined text-green-500">calendar_month</span>
+                            <span>Verano: Lun, Mié, Vie</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-700">
+                            <span class="material-symbols-outlined text-green-500">timer</span>
+                            <span>Salida: 09:00 hs (aprox)</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/5492920607061?text=Hola,%20quiero%20reservar%20el%20Safari%20a%20la%20Naturaleza.%20Somos...%20(indicar%20adultos/menores%20y%20fecha)" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 mt-8 group">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-6 h-6 filter brightness-0 invert" alt="WhatsApp">
+                         Reservar por WhatsApp
                     </a>
+                    
+                    <p class="text-xs text-center text-gray-400 mt-4 leading-tight">
+                        Reserva directa y segura. Cupos limitados.
+                    </p>
                 </div>
             </div>
+
         </div>
     </main>
 
     <div id="footer-container"></div>
+
     <script src="./js/components.js"></script>
     <script src="./js/main.js"></script>
 </body>
