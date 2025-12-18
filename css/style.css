@@ -1,13 +1,13 @@
-/* --- Reglas Customizadas --- */
+/* Estilos personalizados para el Hero y efectos */
 
-/* Fondo de la Hero Section con imagen de la Patagonia */
+/* Fondo con gradiente oscuro sobre imagen de la Patagonia */
 .hero-pattern {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1506543730-c917a80b0803?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
 }
 
-/* Efecto de pincelada (si se usa en alguna parte) */
+/* Efecto de pincelada */
 .brush-stroke {
     mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 60\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5,30 C30,10 60,5 100,25 C140,45 170,10 195,30\" stroke=\"black\" stroke-width=\"40\" stroke-linecap=\"round\" fill=\"none\" /></svg>");
     -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox=\"0 0 200 60\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5,30 C30,10 60,5 100,25 C140,45 170,10 195,30\" stroke=\"black\" stroke-width=\"40\" stroke-linecap=\"round\" fill=\"none\" /></svg>");
