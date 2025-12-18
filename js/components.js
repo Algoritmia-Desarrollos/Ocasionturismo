@@ -3,14 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadComponents() {
-    // --- NAVBAR (Menú Superior Mejorado) ---
+    // --- NAVBAR (Diseño Premium & Responsive Mejorado) ---
     const navbarHTML = `
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-[95%] mx-auto px-4">
+        <div class="w-full md:max-w-[95%] mx-auto px-4">
             <div class="flex justify-between items-center h-20">
+                
                 <div class="flex items-center">
-                    <a class="flex items-center gap-2 group" href="./">
-                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" class="h-16 w-auto object-contain">
+                    <a class="flex items-center gap-2 group focus:outline-none" href="./">
+                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" class="h-14 md:h-20 w-auto object-contain">
                     </a>
                 </div>
 
@@ -18,25 +19,23 @@ function loadComponents() {
                     <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="./">Inicio</a>
                     
                     <div class="relative group">
-                        <button class="flex items-center gap-1 nav-link text-sm font-bold uppercase tracking-wider text-gray-600 group-hover:text-primary transition-colors focus:outline-none py-4">
+                        <button class="flex items-center gap-1 nav-link text-sm font-bold uppercase tracking-wider text-gray-600 group-hover:text-primary transition-colors focus:outline-none py-6">
                             Expediciones
                             <span class="material-symbols-outlined text-lg transition-transform group-hover:rotate-180">expand_more</span>
                         </button>
                         
-                        <div class="absolute left-0 top-full pt-2 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                            <div class="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
-                                <a href="salinas" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                        <div class="absolute left-0 top-full pt-0 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                            <div class="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden mt-2">
+                                <a href="salinas" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
                                     Salinas del Gualicho
                                 </a>
-                                <a href="fuerte" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                                <a href="fuerte" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
                                     Fuerte Argentino
                                 </a>
-                                <a href="safari" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold border-b border-gray-50 transition-all duration-200">
+                                <a href="safari" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
                                     Safari a la Naturaleza
                                 </a>
-                                <a href="city-tour" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-8 font-bold transition-all duration-200">
-                                    City Tour & Puerto
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -46,41 +45,59 @@ function loadComponents() {
                 </div>
 
                 <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary transition-colors focus:outline-none p-2">
-                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary transition-colors focus:outline-none p-2 rounded-lg hover:bg-gray-50 active:scale-95 transform duration-200">
+                        <span class="material-symbols-outlined text-4xl">menu</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-20 shadow-lg h-screen overflow-y-auto pb-20">
-            <div class="px-4 pt-4 pb-6 space-y-2">
-                <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="./">Inicio</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white fixed w-full left-0 top-20 h-[calc(100vh-5rem)] overflow-y-auto border-t border-gray-100 shadow-inner transition-all duration-300 z-40 pb-24">
+            <div class="px-6 py-8 space-y-8">
                 
-                <div class="bg-gray-50 rounded-xl p-4 space-y-3">
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Expediciones</p>
-                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="salinas">
-                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Salinas del Gualicho
+                <div class="space-y-6">
+                    <a class="flex items-center justify-between text-xl font-bold text-gray-900 hover:text-primary transition-colors border-b border-gray-100 pb-4" href="./">
+                        Inicio <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
-                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="fuerte">
-                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Fuerte Argentino
+                    
+                    <div class="space-y-4">
+                        <p class="text-xs font-black text-primary uppercase tracking-[0.2em] mb-2">Nuestras Expediciones</p>
+                        <div class="grid gap-3 pl-2">
+                            <a class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-gray-900 transition-all group border border-transparent hover:border-primary/20" href="salinas">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">landscape</span>
+                                </div>
+                                <span class="font-bold text-sm">Salinas del Gualicho</span>
+                            </a>
+                            <a class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-gray-900 transition-all group border border-transparent hover:border-primary/20" href="fuerte">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">explore</span>
+                                </div>
+                                <span class="font-bold text-sm">Fuerte Argentino</span>
+                            </a>
+                            <a class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-gray-900 transition-all group border border-transparent hover:border-primary/20" href="safari">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">local_shipping</span>
+                                </div>
+                                <span class="font-bold text-sm">Safari a la Naturaleza</span>
+                            </a>
+                           
+                        </div>
+                    </div>
+
+                    <a class="flex items-center justify-between text-xl font-bold text-gray-900 hover:text-primary transition-colors border-b border-gray-100 pb-4" href="about">
+                        Nosotros <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
-                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="safari">
-                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> Safari a la Naturaleza
-                    </a>
-                    <a class="block text-sm font-bold text-gray-600 hover:text-primary flex items-center gap-2" href="city-tour">
-                        <span class="material-symbols-outlined text-primary text-sm">arrow_right</span> City Tour
+                    <a class="flex items-center justify-between text-xl font-bold text-gray-900 hover:text-primary transition-colors border-b border-gray-100 pb-4" href="#contacto">
+                        Contacto <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
                 </div>
-
-                <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="about">Nosotros</a>
-                <a class="block px-4 py-3 rounded-lg text-base font-bold text-gray-700 hover:bg-gray-50 hover:text-primary" href="#contacto">Contacto</a>
             </div>
         </div>
     </nav>
     `;
 
-    // --- FOOTER (Versión Oscura Original) ---
+    // --- FOOTER (Oscuro Original) ---
     const footerHTML = `
     <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800" id="contacto">
         <div class="max-w-[95%] mx-auto px-4">
@@ -164,11 +181,27 @@ function initMobileMenu() {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             const icon = btn.querySelector('span');
+            // Animación simple de icono
             if (menu.classList.contains('hidden')) {
                 icon.textContent = 'menu';
+                // Habilitar scroll del body
+                document.body.style.overflow = '';
             } else {
                 icon.textContent = 'close';
+                // Bloquear scroll del body para que no se mueva el fondo
+                document.body.style.overflow = 'hidden';
             }
+        });
+        
+        // Cerrar menú al hacer clic en un enlace (para single page apps o anclas)
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                 menu.classList.add('hidden');
+                 const icon = btn.querySelector('span');
+                 icon.textContent = 'menu';
+                 document.body.style.overflow = '';
+            });
         });
     }
 }
