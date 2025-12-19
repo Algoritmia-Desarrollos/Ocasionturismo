@@ -2,6 +2,9 @@
 
 export default function renderNavbar(containerId = 'navbar-container') {
     
+    // 1. Configuración: Enlace directo a WhatsApp (Nuevo Número)
+    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
+    
     // 2. Template HTML
     const html = `
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
@@ -34,8 +37,8 @@ export default function renderNavbar(containerId = 'navbar-container') {
                                 <a href="safari" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
                                     Safari a la Naturaleza
                                 </a>
-                                <a href="city-tour" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
-                                    City Tour & Puerto
+                                <a href="circuito" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
+                                    Circuito del Golfo
                                 </a>
                             </div>
                         </div>
@@ -43,10 +46,10 @@ export default function renderNavbar(containerId = 'navbar-container') {
 
                     <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="about">Nosotros</a>
                     
-                    <button onclick="window.openBookingModal('Excursión a elección')" class="bg-gray-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg hover:bg-primary hover:text-gray-900 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                    <a href="${whatsappUrl}" target="_blank" class="bg-gray-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg hover:bg-primary hover:text-gray-900 transition-all transform hover:-translate-y-1 flex items-center gap-2">
                         <span class="material-symbols-outlined text-lg">chat</span>
-                        Reservar Ahora
-                    </button>
+                        Contactar
+                    </a>
                 </div>
 
                 <div class="flex items-center md:hidden">
@@ -86,7 +89,12 @@ export default function renderNavbar(containerId = 'navbar-container') {
                                 </div>
                                 <span class="font-bold text-sm">Safari a la Naturaleza</span>
                             </a>
-                           
+                            <a class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-gray-900 transition-all group border border-transparent hover:border-primary/20" href="circuito">
+                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined">directions_bus</span>
+                                </div>
+                                <span class="font-bold text-sm">Circuito del Golfo</span>
+                            </a>
                         </div>
                     </div>
 
@@ -94,10 +102,10 @@ export default function renderNavbar(containerId = 'navbar-container') {
                         Nosotros <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
                     
-                    <button onclick="window.openBookingModal('Excursión a elección')" class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-widest text-sm hover:bg-primary hover:text-gray-900 transition-colors">
+                    <a href="${whatsappUrl}" target="_blank" class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-widest text-sm hover:bg-primary hover:text-gray-900 transition-colors">
                         <span class="material-symbols-outlined text-xl">chat</span>
-                        Reservar Ahora
-                    </button>
+                        Contactar
+                    </a>
                 </div>
             </div>
         </div>
@@ -112,6 +120,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
     }
 }
 
+// 4. Lógica del Menú Móvil
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');

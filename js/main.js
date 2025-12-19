@@ -88,6 +88,7 @@ function initGallery() {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return; 
 
+    // Aquí cambiamos 'city' por 'circuito'
     const allImages = [
         { src: 'img/1.png', category: 'salinas', alt: 'Atardecer en Salinas' },
         { src: 'img/1-5.webp', category: 'salinas', alt: 'Parvas de Sal' },
@@ -101,10 +102,11 @@ function initGallery() {
         { src: 'img/3-4.webp', category: 'safari', alt: 'Villa de los Pulperos' },
         { src: 'img/3-5.webp', category: 'safari', alt: 'Naturaleza Pura' },
         { src: 'img/3-6.webp', category: 'safari', alt: 'Aventura 4x4' },
-        { src: 'img/4.png', category: 'city', alt: 'Punta Perdiz' },
-        { src: 'img/4-4.webp', category: 'city', alt: 'Aguas Turquesas' },
-        { src: 'img/4-5.webp', category: 'city', alt: 'Lobería' },
-        { src: 'img/4-6.webp', category: 'city', alt: 'Puerto del Este' },
+        // UPDATED CATEGORY
+        { src: 'img/4.png', category: 'circuito', alt: 'Punta Perdiz' },
+        { src: 'img/4-4.webp', category: 'circuito', alt: 'Aguas Turquesas' },
+        { src: 'img/4-5.webp', category: 'circuito', alt: 'Lobería' },
+        { src: 'img/4-6.webp', category: 'circuito', alt: 'Puerto del Este' },
     ];
     
     const loadMoreBtn = document.getElementById('load-more-btn');
