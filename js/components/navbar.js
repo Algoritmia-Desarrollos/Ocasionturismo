@@ -1,11 +1,8 @@
 // js/components/navbar.js
 
 export default function renderNavbar(containerId = 'navbar-container') {
+    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
     
-    // 1. Configuración: Enlace directo a WhatsApp (Nuevo Número)
-    const whatsappUrl = "https://wa.me/5492920293722?text=Hola.";
-    
-    // 2. Template HTML
     const html = `
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
         <div class="w-full md:max-w-[95%] mx-auto px-4">
@@ -13,7 +10,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
                 
                 <div class="flex items-center">
                     <a class="flex items-center gap-2 group focus:outline-none" href="./">
-                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" class="h-14 md:h-20 w-auto object-contain">
+                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" width="180" height="60" class="h-14 md:h-20 w-auto object-contain">
                     </a>
                 </div>
 
@@ -112,7 +109,6 @@ export default function renderNavbar(containerId = 'navbar-container') {
     </nav>
     `;
 
-    // 3. Inyección en el DOM
     const container = document.getElementById(containerId);
     if (container) {
         container.innerHTML = html;
@@ -120,7 +116,6 @@ export default function renderNavbar(containerId = 'navbar-container') {
     }
 }
 
-// 4. Lógica del Menú Móvil
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');

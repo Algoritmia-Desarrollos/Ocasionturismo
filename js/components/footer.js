@@ -1,9 +1,7 @@
 // js/components/footer.js
 
 export default function renderFooter(containerId = 'footer-container') {
-    // 1. Configuración Centralizada
     const currentYear = new Date().getFullYear();
-    // 📞 NUEVO NÚMERO
     const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
     const contactPhone = "+54 9 2920 29-3722";
     const instagramUrl = "https://www.instagram.com/ocasionturismolg/";
@@ -16,9 +14,9 @@ export default function renderFooter(containerId = 'footer-container') {
                 
                 <div class="col-span-1 lg:col-span-1">
                     <a class="flex items-center gap-2 group mb-6" href="./">
-                        <img src="img/logolargoblanco.webp" alt="Ocasión Turismo" class="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity">
+                        <img src="img/logolargoblanco.webp" alt="Ocasión Turismo" width="180" height="60" class="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity">
                     </a>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6">
                         Somos una empresa dedicada a mostrarte lo mejor de la Patagonia Argentina con pasión y profesionalismo. Alojamiento propio en Las Grutas.
                     </p>
                     <div class="flex gap-4">
@@ -29,7 +27,7 @@ export default function renderFooter(containerId = 'footer-container') {
                 </div>
 
                 <div class="col-span-1 lg:col-span-1">
-                    <h4 class="font-display text-xl mb-6 tracking-wide text-primary font-bold">Ubicación</h4>
+                    <h3 class="font-display text-xl mb-6 tracking-wide text-primary font-bold">Ubicación</h3>
                     <ul class="space-y-4 text-gray-300 mb-6">
                         <li class="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
                             <span class="material-symbols-outlined text-primary mt-1 group-hover:scale-110 transition-transform">location_on</span>
@@ -39,7 +37,7 @@ export default function renderFooter(containerId = 'footer-container') {
                     <div class="rounded-lg overflow-hidden border border-gray-700 shadow-lg h-40 w-full relative group">
                          <iframe 
                             src="${mapSrc}" 
-                            title="Ubicación de Ocasión Turismo en Google Maps"  // <-- AGREGAR ESTA LÍNEA
+                            title="Ubicación de Ocasión Turismo en Google Maps"
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -52,7 +50,7 @@ export default function renderFooter(containerId = 'footer-container') {
                 </div>
 
                 <div class="col-span-1 lg:col-span-1">
-                    <h4 class="font-display text-xl mb-6 tracking-wide text-primary font-bold">Explorar</h4>
+                    <h3 class="font-display text-xl mb-6 tracking-wide text-primary font-bold">Explorar</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li><a class="hover:text-white hover:pl-2 transition-all" href="./">Inicio</a></li>
                         <li><a class="hover:text-white hover:pl-2 transition-all" href="salinas">Salinas del Gualicho</a></li>
@@ -65,8 +63,8 @@ export default function renderFooter(containerId = 'footer-container') {
                 <div class="col-span-1 lg:col-span-1">
                     <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg relative overflow-hidden">
                         <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                        <h4 class="font-bold text-white mb-2 relative z-10">¿Listo para viajar?</h4>
-                        <p class="text-gray-400 text-sm mb-4 relative z-10">Reservá tu lugar hoy mismo directamente por WhatsApp.</p>
+                        <h3 class="font-display text-xl font-bold text-white mb-2 relative z-10">¿Listo para viajar?</h3>
+                        <p class="text-gray-300 text-sm mb-4 relative z-10">Reservá tu lugar hoy mismo directamente por WhatsApp.</p>
                         <a class="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg transition-colors relative z-10" href="${whatsappUrl}" target="_blank">
                             <span class="material-symbols-outlined">chat</span>
                             Consultar Ahora
@@ -92,7 +90,5 @@ export default function renderFooter(containerId = 'footer-container') {
     const container = document.getElementById(containerId);
     if (container) {
         container.innerHTML = html;
-    } else {
-        console.error(`Contenedor #${containerId} no encontrado para el Footer.`);
     }
 }
