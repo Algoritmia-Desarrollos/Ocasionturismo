@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://ocasionturismo.com/" />
     <meta property="og:title" content="Ocasión Turismo | Aventura en Las Grutas" />
     <meta property="og:description" content="Salinas del Gualicho, Fuerte Argentino, Safari 4x4 y Circuito del Golfo." />
-    <meta property="og:image" content="https://ocasionturismo.com/img/1.png" />
+    <meta property="og:image" content="https://ocasionturismo.com/img/salinasportada.webp" />
 
     <link rel="preload" as="image" href="img/1548716066_18-san-antonio-este.webp" fetchpriority="high">
     <link rel="preload" href="./css/style.css" as="style" />
@@ -154,86 +154,122 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 2xl:gap-8">
                 
-                <a href="./salinas.html" class="group relative block overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-900">
-                    <div class="aspect-[9/16] w-full overflow-hidden">
-                        <img src="img/portadasalinas.webp" alt="Salinas del Gualicho" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" loading="lazy">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full"> 
+                        <img src="img/salinasportada.webp" 
+                             alt="Salinas del Gualicho" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                             loading="lazy"/>
+                         <div class="absolute top-4 right-4 bg-primary text-gray-900 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Más Vendida</div>
                     </div>
                     
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                        <div class="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                            <div class="flex items-center justify-between mb-2">
-                                <span class="bg-primary text-gray-900 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Imperdible</span>
-                            </div>
-                            <h3 class="text-3xl font-display text-white uppercase leading-none mb-3">Salinas del<br>Gualicho</h3>
-                            <div class="h-0.5 w-12 bg-primary mb-4 transition-all duration-500 group-hover:w-full"></div>
-                            
-                            <p class="text-gray-200 text-sm font-medium line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
-                                Brindis al atardecer y cena bajo las estrellas en el salar más grande.
-                            </p>
-
-                            <button onclick="event.preventDefault(); window.openBookingModal('Salinas del Gualicho')" class="w-full bg-white/20 hover:bg-primary hover:text-gray-900 text-white backdrop-blur-md font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider border border-white/30 hover:border-primary">
+                    <div class="p-5 md:p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Salinas del Gualicho</h3>
+                        </div>
+                        <div class="mb-4">
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
+                        </div>
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Museo de la Sal</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Brindis con Champagne</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Atardecer Mágico</span></li>
+                        </ul>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <a class="w-full block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="salinas">Ver Detalles</a>
+                            <button onclick="window.openBookingModal('Salinas del Gualicho')" class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider">
                                 Reservar Ahora
                             </button>
                         </div>
                     </div>
-                </a>
+                </article>
 
-                <a href="./fuerte.html" class="group relative block overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-900">
-                    <div class="aspect-[9/16] w-full overflow-hidden">
-                        <img src="img/portadafuerte.webp" alt="Fuerte Argentino" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" loading="lazy">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full">
+                        <img src="img/fuerteportada.webp" 
+                             alt="Fuerte Argentino" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                             loading="lazy"/>
+                        <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Historia</div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                        <div class="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                            <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Historia</span>
-                            <h3 class="text-3xl font-display text-white uppercase leading-none mb-3">Fuerte<br>Argentino</h3>
-                            <div class="h-0.5 w-12 bg-red-600 mb-4 transition-all duration-500 group-hover:w-full"></div>
-                            <p class="text-gray-200 text-sm font-medium line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
-                                Leyendas Templarias, travesía 4x4 y aventura extrema.
-                            </p>
-                            <button onclick="event.preventDefault(); window.openBookingModal('Fuerte Argentino')" class="w-full bg-white/20 hover:bg-red-600 text-white backdrop-blur-md font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider border border-white/30 hover:border-red-600">
+                    <div class="p-5 md:p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Fuerte Argentino</h3>
+                        </div>
+                        <div class="mb-4">
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
+                        </div>
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Travesía 4x4 Offroad</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Leyenda de los Templarios</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Cueva del Sótano</span></li>
+                        </ul>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <a class="w-full block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="fuerte">Ver Detalles</a>
+                            <button onclick="window.openBookingModal('Fuerte Argentino')" class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider">
                                 Reservar Ahora
                             </button>
                         </div>
                     </div>
-                </a>
+                </article>
 
-                <a href="./safari.html" class="group relative block overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-900">
-                    <div class="aspect-[9/16] w-full overflow-hidden">
-                        <img src="img/portadasafari.webp" alt="Safari de la Costa" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" loading="lazy">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full">
+                        <img src="img/safariportada.webp" 
+                             alt="Safari de la Costa" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                             loading="lazy"/>
+                        <div class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Aventura</div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                        <div class="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                            <span class="bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">4x4</span>
-                            <h3 class="text-3xl font-display text-white uppercase leading-none mb-3">Safari<br>Naturaleza</h3>
-                            <div class="h-0.5 w-12 bg-blue-500 mb-4 transition-all duration-500 group-hover:w-full"></div>
-                            <p class="text-gray-200 text-sm font-medium line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
-                                Cañadón de las Ostras, El Sótano y diversión en médanos.
-                            </p>
-                            <button onclick="event.preventDefault(); window.openBookingModal('Safari de la Costa')" class="w-full bg-white/20 hover:bg-blue-500 text-white backdrop-blur-md font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider border border-white/30 hover:border-blue-500">
+                    <div class="p-5 md:p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Safari de la Costa</h3>
+                        </div>
+                        <div class="mb-4">
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
+                        </div>
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Cañadón de las Ostras</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Piedras Coloradas</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Fotos en El Sótano</span></li>
+                        </ul>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <a class="w-full block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="safari">Ver Detalles</a>
+                            <button onclick="window.openBookingModal('Safari de la Costa')" class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider">
                                 Reservar Ahora
                             </button>
                         </div>
                     </div>
-                </a>
+                </article>
 
-                <a href="./circuito.html" class="group relative block overflow-hidden rounded-[2rem] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-900">
-                    <div class="aspect-[9/16] w-full overflow-hidden">
-                        <img src="img/portadacircuito.webp" alt="Circuito del Golfo" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" loading="lazy">
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
+                    <div class="relative overflow-hidden aspect-[4/5] w-full"> 
+                        <img src="img/portadacircuito.webp" 
+                             alt="Circuito del Golfo" 
+                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
+                             loading="lazy"/>
+                        <div class="absolute top-4 right-4 bg-cyan-500 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Playa</div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-8">
-                        <div class="transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                            <span class="bg-cyan-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Relax</span>
-                            <h3 class="text-3xl font-display text-white uppercase leading-none mb-3">Circuito del<br>Golfo</h3>
-                            <div class="h-0.5 w-12 bg-cyan-500 mb-4 transition-all duration-500 group-hover:w-full"></div>
-                            <p class="text-gray-200 text-sm font-medium line-clamp-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
-                                Playas del Este, Las Conchillas y Punta Perdices.
-                            </p>
-                            <button onclick="event.preventDefault(); window.openBookingModal('Circuito del Golfo')" class="w-full bg-white/20 hover:bg-cyan-500 text-white backdrop-blur-md font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider border border-white/30 hover:border-cyan-500">
+                    <div class="p-5 md:p-6 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Circuito del Golfo</h3>
+                        </div>
+                        <div class="mb-4">
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
+                        </div>
+                        <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Playas del Este</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Punta Perdices (Caribe)</span></li>
+                            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-yellow-600 text-base mt-0.5">check</span><span>Playa Las Conchillas</span></li>
+                        </ul>
+                        <div class="mt-auto flex flex-col gap-3">
+                            <a class="w-full block text-center border-2 border-gray-900 text-gray-900 hover:bg-gray-50 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider" href="circuito">Ver Detalles</a>
+                            <button onclick="window.openBookingModal('Circuito del Golfo')" class="w-full block text-center bg-gray-900 text-white hover:bg-primary hover:text-gray-900 font-bold py-3 rounded-lg transition-colors uppercase text-xs tracking-wider">
                                 Reservar Ahora
                             </button>
                         </div>
                     </div>
-                </a>
+                </article>
 
             </div>
         </div>
