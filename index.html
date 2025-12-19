@@ -17,11 +17,6 @@
     <meta property="og:image" content="https://ocasionturismo.com/img/1.png" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-
     <script>
       tailwind.config = {
         theme: {
@@ -42,12 +37,17 @@
         },
       };
     </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
     <link rel="stylesheet" href="./css/style.css">
     
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        /* Ajuste fino para móviles muy pequeños */
         @media (max-width: 380px) {
             .hero-title { font-size: 2.5rem !important; }
         }
@@ -62,7 +62,6 @@
     <div id="navbar-container"></div>
 
     <header class="relative h-[90dvh] flex items-center justify-center overflow-hidden">
-        
         <video autoplay muted loop playsinline poster="img/1.png" class="absolute inset-0 w-full h-full object-cover z-0">
             <source src="videos/portada1.mp4" type="video/mp4">
             Tu navegador no soporta video HTML5.
@@ -147,7 +146,7 @@
                             <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Salinas del Gualicho</h3>
                         </div>
                         <div class="mb-4">
-                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">$150.000</span>
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
                         </div>
                         <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span><span>Visita a las parvas de sal</span></li>
@@ -171,7 +170,7 @@
                             <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Fuerte Argentino</h3>
                         </div>
                         <div class="mb-4">
-                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">$150.000</span>
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
                         </div>
                         <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span><span>Camiones militares 4x4</span></li>
@@ -196,7 +195,7 @@
                             <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">Safari Naturaleza</h3>
                         </div>
                         <div class="mb-4">
-                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">$75.000</span>
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
                         </div>
                         <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span><span>Camiones militares 4x4</span></li>
@@ -220,7 +219,7 @@
                             <h3 class="font-display text-xl md:text-2xl text-gray-900 group-hover:text-primary transition-colors leading-tight">City Tour & Puerto</h3>
                         </div>
                         <div class="mb-4">
-                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">$95.000</span>
+                             <span class="bg-gray-100 text-gray-800 text-xs md:text-sm font-bold px-2 py-1 rounded border border-gray-200">Consultar Precio</span>
                         </div>
                         <ul class="space-y-2 text-xs md:text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span><span>Visita al Olivar austral</span></li>
@@ -335,13 +334,29 @@
         </div>
     </section>
 
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-display text-4xl md:text-5xl text-gray-900 mb-6 uppercase tracking-widest">¿Listo para explorar <span class="text-primary">Las Grutas</span>?</h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                Descubrí nuestras excursiones y reservá tu lugar hoy mismo. Viví la Patagonia de la mano de expertos locales.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a class="bg-primary hover:bg-yellow-400 text-gray-900 font-bold text-lg px-8 py-4 rounded shadow-[0_4px_0_rgb(0,0,0,0.2)] hover:shadow-[0_2px_0_rgb(0,0,0,0.2)] hover:translate-y-[2px] transition-all uppercase tracking-wide" href="./#excursiones">
+                    Ver Excursiones
+                </a>
+                <a class="bg-white border-2 border-gray-200 text-gray-900 hover:border-primary font-bold text-lg px-8 py-4 rounded transition-colors uppercase tracking-wide" href="https://wa.me/5492920607061">
+                    Hablemos
+                </a>
+            </div>
+        </div>
+    </section>
+
     <div id="footer-container"></div>
 
     <a class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 animate-bounce hover:animate-none group" href="https://wa.me/5492920607061" target="_blank" aria-label="Chat de Whatsapp">
         <span class="material-symbols-outlined text-2xl md:text-3xl group-hover:rotate-12 transition-transform">chat</span>
     </a>
 
-    <script src="./js/components.js"></script>
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

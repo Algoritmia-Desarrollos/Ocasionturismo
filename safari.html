@@ -48,7 +48,7 @@
     <header class="relative pt-20">
         <div class="h-[55vh] w-full relative overflow-hidden group">
             <img alt="Camión Militar Safari en la playa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="img/3.png"/>
-<div class="absolute inset-0 bg-black/50"></div>            
+            <div class="absolute inset-0 bg-black/50"></div>            
             <div class="absolute bottom-0 left-0 w-full p-6 pb-10">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex flex-wrap gap-3 mb-3">
@@ -198,7 +198,7 @@
                         </div>
                     </div>
 
-                    <button onclick="openBookingModal('Safari a la Naturaleza')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 group uppercase tracking-widest text-xs">
+                    <button onclick="window.openBookingModal('Safari a la Naturaleza')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 group uppercase tracking-widest text-xs">
                          <span class="material-symbols-outlined text-xl">chat</span>
                          Reservar por WhatsApp
                     </button>
@@ -215,68 +215,14 @@
     <div id="footer-container"></div>
 
     <div class="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 p-4 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] lg:hidden">
-        <button onclick="openBookingModal('Safari a la Naturaleza')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-colors uppercase tracking-widest text-xs">
+        <button onclick="window.openBookingModal('Safari a la Naturaleza')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-colors uppercase tracking-widest text-xs">
             <span class="material-symbols-outlined text-xl">chat</span>
             Reservar Ahora
         </button>
     </div>
 
-    <div id="booking-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all duration-300">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform scale-100 transition-transform">
-            <div class="bg-primary p-4 flex justify-between items-center">
-                <h3 class="text-gray-900 font-display text-xl uppercase tracking-wide">Configurá tu Reserva</h3>
-                <button onclick="closeBookingModal()" class="text-gray-900 hover:bg-white/20 rounded-full p-1 transition-colors">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            
-            <div class="p-6 space-y-5">
-                <p class="text-sm text-gray-600 text-center">
-                    Completá los datos para enviar tu solicitud a la agencia por WhatsApp.
-                </p>
+    <div id="booking-modal-container"></div>
 
-                <div>
-                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Fecha Estimada</label>
-                    <input type="date" id="modal-date" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary outline-none">
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Adultos</label>
-                        <select id="modal-adults" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary outline-none">
-                            <option value="1">1</option>
-                            <option value="2" selected>2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5+">5+</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Menores</label>
-                        <select id="modal-minors" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-gray-900 focus:ring-primary focus:border-primary outline-none">
-                            <option value="0" selected>0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3+">3+</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="bg-blue-50 p-3 rounded-lg flex gap-3 items-start border border-blue-100">
-                    <span class="material-symbols-outlined text-blue-600 text-lg mt-0.5">info</span>
-                    <p class="text-xs text-blue-800 leading-relaxed">
-                        El pago se realiza mediante <strong>transferencia bancaria</strong>. Los datos de la cuenta te serán enviados por WhatsApp al confirmar disponibilidad.
-                    </p>
-                </div>
-
-                <button onclick="sendToWhatsapp()" class="w-full bg-gray-900 text-white font-bold py-4 rounded-xl hover:bg-primary hover:text-gray-900 transition-colors flex justify-center items-center gap-2 uppercase tracking-wide text-sm">
-                    Continuar al Chat <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script src="./js/components.js"></script>
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
