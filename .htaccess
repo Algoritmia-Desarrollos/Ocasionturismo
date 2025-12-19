@@ -1,14 +1,21 @@
 RewriteEngine On
 
-# 1. Si el usuario escribe "archivo.html", redirigir a "archivo" (sin extensión) para limpiar la URL
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R=301]
-
-# 2. Si el usuario pide "archivo" (sin extensión), servir internamente "archivo.html"
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
-
-# 3. Forzar HTTPS (Opcional pero recomendado en Hostinger)
+# Forzar HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Eliminar extension .html de la URL (Clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Manejo de Error 404
+ErrorDocument 404 /404.html
+
+# Cacheo agresivo de imágenes (mejora velocidad)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+</IfModule>

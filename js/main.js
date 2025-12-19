@@ -1,72 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Effect del Navbar
-    setTimeout(() => {
-        const nav = document.querySelector('nav');
-        if(nav) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 10) {
-                    nav.classList.add('shadow-md');
-                } else {
-                    nav.classList.remove('shadow-md');
-                }
-            });
-        }
-    }, 100);
+    // 1. Año automático
+    const yearSpan = document.getElementById('year');
+    if(yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // Inicializar Galería si existe
+    // 2. Navbar Scroll Effect
+    const nav = document.getElementById('navbar-container'); 
+    // Nota: Si usas un componente inyectado, asegúrate de aplicar la clase al elemento correcto.
+    // Asumiremos que el header sticky es controlado por CSS o este script si hay una barra fija.
+    
+    // 3. Inicializar Galería
     if(document.getElementById('gallery-grid')) {
         initGallery();
     }
-});
 
-// --- LÓGICA DEL MODAL DE RESERVA ---
+    // 4. Formulario AJAX (Formspree)
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("form-status");
 
-let currentExcursionName = '';
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            
+            // Botón en estado de carga
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Enviando...';
+            btn.disabled = true;
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
 
-function openBookingModal(excursionName) {
-    currentExcursionName = excursionName;
-    const modal = document.getElementById('booking-modal');
-    modal.classList.remove('hidden');
-    // Bloquear scroll del fondo
-    document.body.style.overflow = 'hidden'; 
-}
+            try {
+                const response = await fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-function closeBookingModal() {
-    const modal = document.getElementById('booking-modal');
-    modal.classList.add('hidden');
-    // Habilitar scroll
-    document.body.style.overflow = 'auto'; 
-}
-
-function sendToWhatsapp() {
-    const date = document.getElementById('modal-date').value;
-    const adults = document.getElementById('modal-adults').value;
-    const minors = document.getElementById('modal-minors').value;
-
-    if (!date) {
-        alert("Por favor, seleccioná una fecha aproximada.");
-        return;
+                if (response.ok) {
+                    status.innerHTML = "¡Gracias! Tu mensaje fue enviado con éxito.";
+                    status.classList.remove('hidden', 'text-red-400');
+                    status.classList.add('text-green-400');
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        status.innerHTML = "Hubo un problema al enviar el formulario.";
+                    }
+                    status.classList.remove('hidden', 'text-green-400');
+                    status.classList.add('text-red-400');
+                }
+            } catch (error) {
+                status.innerHTML = "Error de conexión. Intenta nuevamente.";
+                status.classList.remove('hidden', 'text-green-400');
+                status.classList.add('text-red-400');
+            } finally {
+                // Restaurar botón
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
     }
-
-    // Construir mensaje
-    let message = `Hola! Quiero reservar *${currentExcursionName}*.%0A`;
-    message += `📅 Fecha estimada: ${date}%0A`;
-    message += `👥 Adultos: ${adults}%0A`;
-    message += `👶 Menores (hasta 12): ${minors}%0A`;
-    message += `Quisiera coordinar el pago por transferencia.`;
-
-    // Abrir WhatsApp
-    const url = `https://wa.me/5492920607061?text=${message}`;
-    window.open(url, '_blank');
-    
-    closeBookingModal();
-}
+});
 
 // --- LÓGICA GALERÍA ---
 function initGallery() {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return; 
 
+    // Aquí mantengo tus imágenes, asegúrate que las rutas "./img/..." sean correctas según tu estructura de carpetas
     const allImages = [
         { src: 'img/1.png', category: 'salinas', alt: 'Atardecer en Salinas' },
         { src: 'img/1-5.webp', category: 'salinas', alt: 'Parvas de Sal' },
@@ -89,33 +95,41 @@ function initGallery() {
         const filteredImages = allImages.filter(img => img.category === currentCategory);
         const imagesToShow = filteredImages.slice(0, visibleCount);
 
-        imagesToShow.forEach(img => {
+        imagesToShow.forEach((img, index) => {
             const div = document.createElement('div');
-            div.className = 'relative rounded-xl overflow-hidden group shadow-lg aspect-[4/3] cursor-pointer bg-gray-100';
+            // Agrego fade-in escalonado para efecto visual
+            div.className = 'relative rounded-xl overflow-hidden group shadow-lg aspect-[4/3] cursor-pointer bg-gray-100 animate-fade-in-up';
+            div.style.animationDelay = `${index * 50}ms`;
+            
             div.innerHTML = `
                 <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-white font-display uppercase tracking-widest text-sm text-center px-2">${img.alt}</p>
+                    <p class="text-white font-display uppercase tracking-widest text-sm text-center px-2 font-bold">${img.alt}</p>
                 </div>
             `;
             grid.appendChild(div);
         });
         
-        if (visibleCount >= filteredImages.length) {
-            if(loadMoreBtn) loadMoreBtn.classList.add('hidden');
-        } else {
-            if(loadMoreBtn) loadMoreBtn.classList.remove('hidden');
+        if (loadMoreBtn) {
+            if (visibleCount >= filteredImages.length) {
+                loadMoreBtn.classList.add('hidden');
+            } else {
+                loadMoreBtn.classList.remove('hidden');
+            }
         }
     }
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            // Reset estilos
             tabButtons.forEach(b => {
                 b.classList.remove('bg-primary', 'text-gray-900', 'border-transparent');
-                b.classList.add('bg-transparent', 'text-white', 'border-white/30');
+                b.classList.add('border-white/30', 'text-white');
             });
-            e.target.classList.remove('bg-transparent', 'text-white', 'border-white/30');
+            // Activar botón clickeado
+            e.target.classList.remove('border-white/30', 'text-white');
             e.target.classList.add('bg-primary', 'text-gray-900', 'border-transparent');
+            
             currentCategory = e.target.dataset.category;
             visibleCount = 8;
             renderGallery();
