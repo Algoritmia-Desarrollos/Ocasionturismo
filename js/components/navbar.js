@@ -1,12 +1,10 @@
 // js/components/navbar.js
 
 export default function renderNavbar(containerId = 'navbar-container') {
-    // 1. Configuración y Datos
-    // Nota: Usamos enlaces sin .html para URLs limpias, asegurate que el .htaccess lo soporte.
-    // Si falla, agrega .html a los href.
-    const whatsappUrl = "https://wa.me/5492920607061?text=Hola,%20quiero%20reservar%20una%20excursi%C3%B3n!";
+    // 1. Configuración: Nuevo Número
+    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20quiero%20reservar%20una%20excursi%C3%B3n!";
     
-    // 2. Template HTML (Mobile First + Tailwind)
+    // 2. Template HTML
     const html = `
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
         <div class="w-full md:max-w-[95%] mx-auto px-4">
@@ -113,37 +111,32 @@ export default function renderNavbar(containerId = 'navbar-container') {
     </nav>
     `;
 
-    // 3. Inyección en el DOM
     const container = document.getElementById(containerId);
     if (container) {
         container.innerHTML = html;
-        initMobileMenu(); // Iniciamos la lógica inmediatamente después de inyectar
-    } else {
-        console.error(`Contenedor #${containerId} no encontrado para el Navbar.`);
+        initMobileMenu();
     }
 }
 
-// 4. Lógica Privada del Componente (Mobile Menu)
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
     
     if(btn && menu) {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevenir burbujeo
+            e.stopPropagation();
             menu.classList.toggle('hidden');
             const icon = btn.querySelector('span');
             
             if (menu.classList.contains('hidden')) {
                 icon.textContent = 'menu';
-                document.body.style.overflow = ''; // Restaurar scroll
+                document.body.style.overflow = ''; 
             } else {
                 icon.textContent = 'close';
-                document.body.style.overflow = 'hidden'; // Bloquear scroll
+                document.body.style.overflow = 'hidden'; 
             }
         });
         
-        // Cerrar al hacer click en links
         const links = menu.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
@@ -154,7 +147,6 @@ function initMobileMenu() {
             });
         });
 
-        // Cerrar al hacer click fuera (Opcional pero recomendado UX)
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !btn.contains(e.target) && !menu.classList.contains('hidden')) {
                 menu.classList.add('hidden');

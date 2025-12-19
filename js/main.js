@@ -3,7 +3,7 @@
 // 1. Importar Componentes Atómicos
 import renderNavbar from './components/navbar.js';
 import renderFooter from './components/footer.js';
-import renderBookingModal from './components/booking-modal.js'; // 📍 Nuevo Import
+import renderBookingModal from './components/booking-modal.js';
 
 // Estado global para la excursión seleccionada
 let currentExcursion = '';
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderNavbar('navbar-container');
     renderFooter('footer-container');
     
-    // 3. Montar Modal de Reservas (Solo si el contenedor existe en la página)
+    // 3. Montar Modal de Reservas (Solo si el contenedor existe)
     if(document.getElementById('booking-modal-container')) {
         renderBookingModal('booking-modal-container');
     }
@@ -25,17 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- LÓGICA DE RESERVAS (GLOBAL) ---
-// Exponemos las funciones al objeto 'window' para que los botones HTML puedan usarlas
-
 window.openBookingModal = function(excursionName) {
     currentExcursion = excursionName;
     const modal = document.getElementById('booking-modal');
     
     if(modal) {
         modal.classList.remove('hidden');
-        // Hack para activar la transición de opacidad/escala
         setTimeout(() => {
-            const inner = modal.querySelector('div'); // El div blanco interno
+            const inner = modal.querySelector('div');
             if(inner) {
                 inner.classList.remove('scale-95', 'opacity-0');
                 inner.classList.add('scale-100', 'opacity-100');
@@ -54,8 +51,6 @@ window.closeBookingModal = function() {
             inner.classList.remove('scale-100', 'opacity-100');
             inner.classList.add('scale-95', 'opacity-0');
         }
-        
-        // Esperar a que termine la animación antes de ocultar
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
@@ -71,18 +66,16 @@ window.sendToWhatsapp = function() {
     const adults = adultsInput ? adultsInput.value : '2';
     const minors = minorsInput ? minorsInput.value : '0';
 
-    // Formatear mensaje
     const text = `Hola! Quiero reservar *${currentExcursion}*.\n\n📅 Fecha estimada: ${date}\n👥 Adultos: ${adults}\n👶 Menores: ${minors}\n\nQuedo a la espera de confirmación y datos para el pago.`;
     
-    // Tu número
-    const phone = "5492920607061"; 
+    // 📞 NUEVO NÚMERO ACTUALIZADO
+    const phone = "5492920293722"; 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
     window.open(url, '_blank');
     window.closeBookingModal();
 };
 
-// Cerrar al hacer click fuera
 window.addEventListener('click', (e) => {
     const modal = document.getElementById('booking-modal');
     if (modal && e.target === modal) {
@@ -90,13 +83,11 @@ window.addEventListener('click', (e) => {
     }
 });
 
-
 // --- LÓGICA DE LA GALERÍA ---
 function initGallery() {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return; 
 
-    // Base de datos de imágenes
     const allImages = [
         { src: 'img/1.png', category: 'salinas', alt: 'Atardecer en Salinas' },
         { src: 'img/1-5.webp', category: 'salinas', alt: 'Parvas de Sal' },

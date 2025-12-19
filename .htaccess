@@ -1,21 +1,32 @@
 RewriteEngine On
 
-# Forzar HTTPS
+# 1. SEGURIDAD BLINDADA (Faltaba esto)
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
+
+# 2. Forzar HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Eliminar extension .html de la URL (Clean URLs)
+# 3. URLs Limpias (Sin .html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
 
-# Manejo de Error 404
+# 4. Error 404 Real
 ErrorDocument 404 /404.html
 
-# Cacheo agresivo de imágenes (mejora velocidad)
+# 5. Rendimiento (Cache)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 month"
   ExpiresByType image/jpeg "access plus 1 month"
   ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
 </IfModule>

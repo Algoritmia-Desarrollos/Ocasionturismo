@@ -3,12 +3,12 @@
 export default function renderFooter(containerId = 'footer-container') {
     // 1. Configuración Centralizada
     const currentYear = new Date().getFullYear();
-    const whatsappUrl = "https://wa.me/5492920607061?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
+    // 📞 NUEVO NÚMERO
+    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
+    const contactPhone = "+54 9 2920 29-3722";
     const instagramUrl = "https://www.instagram.com/ocasionturismolg/";
-    // URL del Mapa (Embed simple)
     const mapSrc = "https://maps.google.com/maps?q=Ocasión+Turismo,+Las+Grutas,+Río+Negro&t=&z=15&ie=UTF8&iwloc=&output=embed";
 
-    // 2. Template HTML
     const html = `
     <footer class="bg-gray-900 text-white pt-20 pb-10 border-t border-gray-800" id="contacto">
         <div class="max-w-[95%] mx-auto px-4">
@@ -73,7 +73,7 @@ export default function renderFooter(containerId = 'footer-container') {
                     </div>
                     <div class="mt-6">
                         <p class="text-gray-400 text-sm mb-2">Contacto Directo:</p>
-                        <a href="tel:+5492920607061" class="text-xl font-display text-white hover:text-primary transition-colors tracking-wide">+54 9 2920 60-7061</a>
+                        <a href="tel:${contactPhone.replace(/[\s-]/g, '')}" class="text-xl font-display text-white hover:text-primary transition-colors tracking-wide">${contactPhone}</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,6 @@ export default function renderFooter(containerId = 'footer-container') {
     </footer>
     `;
 
-    // 3. Inyección en el DOM
     const container = document.getElementById(containerId);
     if (container) {
         container.innerHTML = html;
