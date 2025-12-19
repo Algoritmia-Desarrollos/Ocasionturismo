@@ -35,13 +35,16 @@ function loadComponents() {
                                 <a href="safari" class="block px-5 py-4 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary hover:pl-7 font-bold border-b border-gray-50 transition-all duration-200">
                                     Safari a la Naturaleza
                                 </a>
-                                
                             </div>
                         </div>
                     </div>
 
                     <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="about">Nosotros</a>
-                    <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="#contacto">Contacto</a>
+                    
+                    <a class="bg-gray-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg hover:bg-primary hover:text-gray-900 transition-all transform hover:-translate-y-1 flex items-center gap-2" href="https://wa.me/5492920607061?text=Hola!%20Quiero%20consultar%20por%20una%20excursi%C3%B3n" target="_blank">
+                        <span class="material-symbols-outlined text-lg">chat</span>
+                        Reservar Ahora
+                    </a>
                 </div>
 
                 <div class="flex items-center md:hidden">
@@ -88,8 +91,10 @@ function loadComponents() {
                     <a class="flex items-center justify-between text-xl font-bold text-gray-900 hover:text-primary transition-colors border-b border-gray-100 pb-4" href="about">
                         Nosotros <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
-                    <a class="flex items-center justify-between text-xl font-bold text-gray-900 hover:text-primary transition-colors border-b border-gray-100 pb-4" href="#contacto">
-                        Contacto <span class="material-symbols-outlined text-gray-300">chevron_right</span>
+                    
+                    <a class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-widest text-sm hover:bg-primary hover:text-gray-900 transition-colors" href="https://wa.me/5492920607061?text=Hola!%20Quiero%20consultar%20por%20una%20excursi%C3%B3n" target="_blank">
+                        <span class="material-symbols-outlined text-xl">chat</span>
+                        Reservar Ahora
                     </a>
                 </div>
             </div>

@@ -41,15 +41,14 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="bg-white text-text-main font-body antialiased">
+<body class="bg-white text-text-main font-body antialiased pb-24 lg:pb-0">
 
     <div id="navbar-container"></div>
 
     <header class="relative pt-20">
         <div class="h-[55vh] w-full relative overflow-hidden group">
             <img alt="Atardecer en Salinas del Gualicho" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="img/1.png"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            
+<div class="absolute inset-0 bg-black/50"></div>            
             <div class="absolute bottom-0 left-0 w-full p-6 pb-10">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex flex-wrap gap-3 mb-3">
@@ -159,7 +158,7 @@
             </div>
 
             <div class="lg:col-span-4">
-                <div class="sticky top-24 bg-white p-6 rounded-2xl shadow-[0_5px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 z-10">
+                <div class="sticky top-24 bg-white p-6 rounded-2xl shadow-[0_5px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 z-10 hidden lg:block">
                     <div class="text-center mb-6 pb-6 border-b border-gray-100">
                         <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Precio Online</p>
                         <div class="flex items-center justify-center gap-2">
@@ -210,6 +209,13 @@
     </main>
 
     <div id="footer-container"></div>
+
+    <div class="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 p-4 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] lg:hidden">
+        <button onclick="openBookingModal('Salinas del Gualicho')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-colors uppercase tracking-widest text-xs">
+            <span class="material-symbols-outlined text-xl">chat</span>
+            Reservar Ahora
+        </button>
+    </div>
 
     <div id="booking-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all duration-300">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform scale-100 transition-transform">
