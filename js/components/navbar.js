@@ -1,8 +1,6 @@
 // js/components/navbar.js
 
 export default function renderNavbar(containerId = 'navbar-container') {
-    // 1. Configuración: Nuevo Número
-    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20quiero%20reservar%20una%20excursi%C3%B3n!";
     
     // 2. Template HTML
     const html = `
@@ -45,10 +43,10 @@ export default function renderNavbar(containerId = 'navbar-container') {
 
                     <a class="nav-link text-sm font-bold uppercase tracking-wider text-gray-600 hover:text-primary transition-colors" href="about">Nosotros</a>
                     
-                    <a class="bg-gray-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg hover:bg-primary hover:text-gray-900 transition-all transform hover:-translate-y-1 flex items-center gap-2" href="${whatsappUrl}" target="_blank">
+                    <button onclick="window.openBookingModal('Excursión a elección')" class="bg-gray-900 text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg hover:bg-primary hover:text-gray-900 transition-all transform hover:-translate-y-1 flex items-center gap-2">
                         <span class="material-symbols-outlined text-lg">chat</span>
                         Reservar Ahora
-                    </a>
+                    </button>
                 </div>
 
                 <div class="flex items-center md:hidden">
@@ -88,12 +86,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
                                 </div>
                                 <span class="font-bold text-sm">Safari a la Naturaleza</span>
                             </a>
-                            <a class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 hover:bg-yellow-50 text-gray-700 hover:text-gray-900 transition-all group border border-transparent hover:border-primary/20" href="city-tour">
-                                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined">directions_bus</span>
-                                </div>
-                                <span class="font-bold text-sm">City Tour</span>
-                            </a>
+                           
                         </div>
                     </div>
 
@@ -101,20 +94,21 @@ export default function renderNavbar(containerId = 'navbar-container') {
                         Nosotros <span class="material-symbols-outlined text-gray-300">chevron_right</span>
                     </a>
                     
-                    <a class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-widest text-sm hover:bg-primary hover:text-gray-900 transition-colors" href="${whatsappUrl}" target="_blank">
+                    <button onclick="window.openBookingModal('Excursión a elección')" class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-widest text-sm hover:bg-primary hover:text-gray-900 transition-colors">
                         <span class="material-symbols-outlined text-xl">chat</span>
                         Reservar Ahora
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
     `;
 
+    // 3. Inyección en el DOM
     const container = document.getElementById(containerId);
     if (container) {
         container.innerHTML = html;
-        initMobileMenu();
+        initMobileMenu(); 
     }
 }
 
@@ -124,7 +118,7 @@ function initMobileMenu() {
     
     if(btn && menu) {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation();
+            e.stopPropagation(); 
             menu.classList.toggle('hidden');
             const icon = btn.querySelector('span');
             
