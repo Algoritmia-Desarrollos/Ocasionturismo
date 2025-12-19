@@ -3,7 +3,7 @@
 export default function renderNavbar(containerId = 'navbar-container') {
     
     // 1. Configuración: Enlace directo a WhatsApp (Nuevo Número)
-    const whatsappUrl = "https://wa.me/5492920293722?text=Hola,%20tengo%20una%20consulta%20desde%20la%20web.";
+    const whatsappUrl = "https://wa.me/5492920293722?text=Hola.";
     
     // 2. Template HTML
     const html = `

@@ -39,6 +39,7 @@ export default function renderFooter(containerId = 'footer-container') {
                     <div class="rounded-lg overflow-hidden border border-gray-700 shadow-lg h-40 w-full relative group">
                          <iframe 
                             src="${mapSrc}" 
+                            title="Ubicación de Ocasión Turismo en Google Maps"  // <-- AGREGAR ESTA LÍNEA
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
