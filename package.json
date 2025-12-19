@@ -1,0 +1,25 @@
+{
+  "name": "ocasion-turismo",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000O\u0000c\u0000a\u0000s\u0000i\u0000o\u0000n\u0000t\u0000u\u0000r\u0000i\u0000s\u0000m\u0000o\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Algoritmia-Desarrollos/Ocasionturismo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Algoritmia-Desarrollos/Ocasionturismo/issues"
+  },
+  "homepage": "https://github.com/Algoritmia-Desarrollos/Ocasionturismo#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.18"
+  }
+}
