@@ -85,6 +85,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
+
 // --- LÓGICA DE LA GALERÍA ---
 function initGallery() {
     const grid = document.getElementById('gallery-grid');
@@ -92,20 +93,20 @@ function initGallery() {
 
     // Aquí cambiamos 'city' por 'circuito'
     const allImages = [
-        { src: 'img/1.png', category: 'salinas', alt: 'Atardecer en Salinas' },
+        { src: 'img/salinasportada.webp', category: 'salinas', alt: 'Atardecer en Salinas' },
         { src: 'img/1-5.webp', category: 'salinas', alt: 'Parvas de Sal' },
         { src: 'img/1-6.webp', category: 'salinas', alt: 'Cena bajo las estrellas' },
         { src: 'img/1-7.webp', category: 'salinas', alt: 'Brindis Mágico' },
-        { src: 'img/2.png', category: 'fuerte', alt: 'Camión 6x6 Fuerte' },
+        { src: 'img/fuerteportada.webp', category: 'fuerte', alt: 'Camión 6x6 Fuerte' },
         { src: 'img/2-4.webp', category: 'fuerte', alt: 'Subiendo médanos' },
         { src: 'img/2-5.webp', category: 'fuerte', alt: 'Expedición Militar' },
         { src: 'img/2-6.webp', category: 'fuerte', alt: 'Vistas Panorámicas' },
-        { src: 'img/3.png', category: 'safari', alt: 'Camión Safari' },
+        { src: 'img/safariportada.webp', category: 'safari', alt: 'Camión Safari' },
         { src: 'img/3-4.webp', category: 'safari', alt: 'Villa de los Pulperos' },
         { src: 'img/3-5.webp', category: 'safari', alt: 'Naturaleza Pura' },
         { src: 'img/3-6.webp', category: 'safari', alt: 'Aventura 4x4' },
         // UPDATED CATEGORY
-        { src: 'img/4.png', category: 'circuito', alt: 'Punta Perdiz' },
+        { src: 'img/circuitoportada.webp', category: 'circuito', alt: 'Punta Perdiz' },
         { src: 'img/4-4.webp', category: 'circuito', alt: 'Aguas Turquesas' },
         { src: 'img/4-5.webp', category: 'circuito', alt: 'Lobería' },
         { src: 'img/4-6.webp', category: 'circuito', alt: 'Puerto del Este' },
