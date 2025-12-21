@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{html,js}"], // Esto le dice: "buscá clases en todos los html y js"
+  content: ["./*.html", "./js/**/*.js"], // Esto le dice: "buscá clases en todos los html y js"
   theme: {
     extend: {
       colors: {
