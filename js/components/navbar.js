@@ -162,16 +162,21 @@ function initScrollEffect() {
     if (!nav) return;
 
     let ticking = false;
+    let isScrolled = false;
 
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
-                if (window.scrollY > 10) {
+                const currentScroll = window.scrollY;
+                
+                if (currentScroll > 10 && !isScrolled) {
                     nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md');
                     nav.classList.remove('bg-transparent');
-                } else {
+                    isScrolled = true;
+                } else if (currentScroll <= 10 && isScrolled) {
                     nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
                     nav.classList.add('bg-transparent');
+                    isScrolled = false;
                 }
                 ticking = false;
             });
