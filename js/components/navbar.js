@@ -10,7 +10,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
                 
                 <div class="flex items-center">
                     <a class="flex items-center gap-2 group focus:outline-none" href="./">
-                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" width="180" height="60" class="h-14 md:h-20 w-auto object-contain">
+                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" style="width: auto; height: 56px;" width="180" height="60" class="h-14 md:h-20 w-auto object-contain">
                     </a>
                 </div>
 
@@ -113,6 +113,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
     if (container) {
         container.innerHTML = html;
         initMobileMenu(); 
+        initScrollEffect();
     }
 }
 
@@ -154,4 +155,25 @@ function initMobileMenu() {
             }
         });
     }
+}
+
+function initScrollEffect() {
+    const nav = document.querySelector('nav');
+    if (!nav) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 10) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
 }

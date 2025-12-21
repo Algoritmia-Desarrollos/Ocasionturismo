@@ -1,55 +1,52 @@
-Options -MultiViews
-RewriteEngine On
-
-# 1. SEGURIDAD BLINDADA
 <IfModule mod_headers.c>
-    Header set X-Frame-Options "DENY"
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-XSS-Protection "1; mode=block"
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header set Referrer-Policy "no-referrer-when-downgrade"
+    # Cachear imágenes, CSS, JS y fuentes por 1 año (31536000 segundos)
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2|ttf|otf|eot)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # Cachear HTML por 1 hora (para que vean cambios rápido si editas)
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "max-age=3600, public"
+    </FilesMatch>
 </IfModule>
 
-# 2. FORZAR HTTPS (Si no es seguro, lo hace seguro)
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 hour"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
 
-# 3. URLS LIMPIAS (LA SOLUCIÓN A TU PROBLEMA)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
 
-# A) Si el usuario escribe "archivo.html", le borra la extensión visualmente (Redirect 301)
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
-
-# B) Si el usuario entra a "/archivo", el servidor busca "archivo.html" internamente
-RewriteCond %{REQUEST_FILENAME} !-d
+# Redirecciones y seguridad básica
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-# 4. ERROR 404 PERSONALIZADO
 ErrorDocument 404 /404.html
 
-# 5. RENDIMIENTO Y CACHÉ (Agregué Video y Fuentes)
-<IfModule mod_expires.c>
-  ExpiresActive On
-  
-  # Imágenes (1 mes)
-  ExpiresByType image/jpg "access plus 1 month"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/gif "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
-  
-  # Video (1 mes - ¡Clave para tu portada!)
-  ExpiresByType video/mp4 "access plus 1 month"
-  ExpiresByType video/webm "access plus 1 month"
-  
-  # Fuentes (1 mes - Para Google Fonts locales si tuvieras)
-  ExpiresByType font/woff2 "access plus 1 month"
-  
-  # CSS y JS (1 semana)
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
-  ExpiresByType text/javascript "access plus 1 week"
+<IfModule mod_headers.c>
+    # Forzar HTTPS (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Prevenir ataques XSS
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevenir que tu sitio sea incrustado en iframes de otros (Clickjacking)
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # Prevenir sniffing de tipo MIME
+    Header set X-Content-Type-Options nosniff
+    
+    # Política de Referencia (Mejora privacidad y SEO)
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>

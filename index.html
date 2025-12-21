@@ -18,63 +18,29 @@
 
     <link rel="preload" as="image" href="img/heroportada.webp" fetchpriority="high">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="modulepreload" href="js/main.js">
+    <link rel="modulepreload" href="js/components/navbar.js">
+    <link rel="modulepreload" href="js/components/footer.js">
+    <link rel="modulepreload" href="js/components/booking-modal.js">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
     </noscript>
 
-    <link rel="icon" type="image/webp" href="./img/logofavicon.webp" />
-    <link rel="apple-touch-icon" href="./img/logofavicon.webp" />
-
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="./css/style.css">
-
-   <style>
-        /* Capa que cubre todo */
-        #page-preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff; /* Fondo blanco */
-            z-index: 999999; /* Por encima de todo */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-        }
-
-        /* Clase para ocultarlo */
-        #page-preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* Spinner giratorio */
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid #f3f3f3; /* Gris claro */
-            border-top: 4px solid #FBBF24; /* TU COLOR PRIMARIO (Amber) */
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Bloquear scroll mientras carga */
-        body.loading {
-            overflow: hidden;
-        }
-    </style>
 </head>
-
 <body class="bg-white text-text-main font-body antialiased selection:bg-primary selection:text-secondary">
+    <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4 animate-pulse">
+            <img src="img/logo.webp" alt="Cargando..." style="width: 96px; height: 96px;" width="96" height="96">
+            <div class="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+    </div>
 
     <div id="navbar-container"></div>
 
@@ -88,9 +54,11 @@
             class="absolute inset-0 w-full h-full object-cover z-0" 
             style="object-position: center;"
             width="1920" 
-            height="1080">
+            height="1080"
+            aria-hidden="true" 
+            tabindex="-1">
             <source src="videos/portada1.mp4" type="video/mp4">
-            <img src="img/heroportada.webp" alt="Paisaje Las Grutas" class="w-full h-full object-cover" width="1920" height="1080">
+            <img src="img/heroportada.webp" id="portada-hero" alt="Paisaje Las Grutas" class="w-full h-full object-cover" width="1920" height="1080">
         </video>
 
         <div class="absolute inset-0 bg-black/50 z-10"></div>
@@ -166,11 +134,14 @@
                 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
                     <div class="relative overflow-hidden aspect-[3/4] w-full bg-gray-200"> 
-                        <img src="img/salinasportada.webp" 
-                             alt="Excursión Salinas del Gualicho al atardecer" 
-                             width="625" height="1111"
-                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-                             loading="lazy"/>
+                        <img 
+                            src="img/salinasportada-small.webp" 
+                            srcset="img/salinasportada-small.webp 650w, img/salinasportada.webp 1400w"
+                            sizes="(max-width: 768px) 100vw, 625px"
+                            alt="Excursión Salinas del Gualicho al atardecer" 
+                            width="625" height="885" 
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" 
+                            loading="lazy">
                          <div class="absolute top-4 right-4 bg-primary text-gray-900 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Más Vendida</div>
                     </div>
                     
@@ -197,11 +168,14 @@
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
                     <div class="relative overflow-hidden aspect-[3/4] w-full bg-gray-200">
-                        <img src="img/fuerteportada.webp" 
-                             alt="Excursión Fuerte Argentino en 4x4" 
-                             width="625" height="1111"
-                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-                             loading="lazy"/>
+                        <img 
+                            src="img/fuerteportada-small.webp" 
+                            srcset="img/fuerteportada-small.webp 650w, img/fuerteportada.webp 1400w"
+                            sizes="(max-width: 768px) 100vw, 625px"
+                            alt="Excursión Fuerte Argentino en 4x4" 
+                            width="625" height="885" 
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" 
+                            loading="lazy">
                         <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Historia</div>
                     </div>
                     <div class="p-5 md:p-6 flex-1 flex flex-col relative z-20 bg-white">
@@ -227,11 +201,14 @@
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
                     <div class="relative overflow-hidden aspect-[3/4] w-full bg-gray-200">
-                        <img src="img/safariportada.webp" 
-                             alt="Safari de la Costa 4x4 en la playa" 
-                             width="625" height="1111"
-                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-                             loading="lazy"/>
+                        <img 
+                            src="img/safariportada-small.webp" 
+                            srcset="img/safariportada-small.webp 650w, img/safariportada.webp 1400w"
+                            sizes="(max-width: 768px) 100vw, 625px"
+                            alt="Safari de la Costa 4x4 en la playa" 
+                            width="625" height="885" 
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" 
+                            loading="lazy">
                         <div class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Aventura</div>
                     </div>
                     <div class="p-5 md:p-6 flex-1 flex flex-col relative z-20 bg-white">
@@ -257,11 +234,14 @@
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group flex flex-col h-full border border-gray-100">
                     <div class="relative overflow-hidden aspect-[3/4] w-full bg-gray-200"> 
-                        <img src="img/circuitoportada.webp" 
-                             alt="Circuito del Golfo playas del este" 
-                             width="625" height="1111"
-                             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" 
-                             loading="lazy"/>
+                        <img 
+                            src="img/circuitoportada-small.webp" 
+                            srcset="img/circuitoportada-small.webp 650w, img/circuitoportada.webp 1400w"
+                            sizes="(max-width: 768px) 100vw, 625px"
+                            alt="Circuito del Golfo playas del este" 
+                            width="625" height="885" 
+                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" 
+                            loading="lazy">
                         <div class="absolute top-4 right-4 bg-cyan-500 text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full uppercase shadow-sm z-10">Playa</div>
                     </div>
                     <div class="p-5 md:p-6 flex-1 flex flex-col relative z-20 bg-white">
@@ -375,7 +355,7 @@
 
     <div id="footer-container"></div>
 
-    <a class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 animate-bounce hover:animate-none group" href="https://wa.me/5492920293722" target="_blank" aria-label="Chat de Whatsapp">
+    <a class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-12 h-12 md:w-14 md:h-14 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 animate-bounce hover:animate-none group" href="https://wa.me/5492920293722" target="_blank" aria-label="Chat de WhatsApp">
         <span class="material-symbols-outlined text-2xl md:text-3xl group-hover:rotate-12 transition-transform">chat</span>
     </a>
 

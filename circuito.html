@@ -6,10 +6,11 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
     </noscript>
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="antialiased text-gray-900 bg-white">
@@ -17,21 +18,21 @@
 
     <header class="relative pt-20">
         <div class="h-[55vh] w-full relative overflow-hidden group">
-            <img alt="Playa Punta Perdices" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="img/circuito-hero.webp"/>
+            <img alt="Circuito del Golfo - Punta Perdices" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="img/circuito-hero.webp"/>
             <div class="absolute inset-0 bg-black/40"></div>            
             <div class="absolute bottom-0 left-0 w-full p-6 pb-10">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex flex-wrap gap-3 mb-3">
-                        <span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Caribe Patagónico</span>
+                        <span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">El Caribe Patagónico</span>
                         <span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
-                            <span class="material-symbols-outlined text-sm">beach_access</span> Puerto del Este
+                            <span class="material-symbols-outlined text-sm">beach_access</span> Playas de Arena Blanca
                         </span>
                     </div>
                     <h1 class="text-4xl md:text-6xl font-display text-white mb-2 drop-shadow-lg uppercase leading-none tracking-wider">
                         Circuito del Golfo
                     </h1>
                     <p class="text-lg text-gray-200 font-medium max-w-2xl drop-shadow-md">
-                        Un paraíso natural a 60 km. Conchillas, Punta Perdices y aguas cristalinas.
+                        Explorá las playas más vírgenes del Este: Punta Perdices, Las Conchillas y el Puerto de San Antonio Este.
                     </p>
                 </div>
             </div>
@@ -49,75 +50,57 @@
                         <div><p class="text-[10px] text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-sm">5 horas</p></div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <div class="p-2 bg-green-50 rounded-lg text-green-600"><span class="material-symbols-outlined text-xl">directions_bus</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Transporte</p><p class="font-bold text-gray-900 text-sm">Combis / Bus</p></div>
+                        <div class="p-2 bg-green-50 rounded-lg text-green-600"><span class="material-symbols-outlined text-xl">sailing</span></div>
+                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Lugar</p><p class="font-bold text-gray-900 text-sm">Puerto Este</p></div>
                     </div>
                     <div class="flex items-center gap-3">
                         <div class="p-2 bg-purple-50 rounded-lg text-purple-600"><span class="material-symbols-outlined text-xl">water_drop</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Aguas</p><p class="font-bold text-gray-900 text-sm">Cristalinas</p></div>
+                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Agua</p><p class="font-bold text-gray-900 text-sm">Cristalina</p></div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><span class="material-symbols-outlined text-xl">sunny</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Actividad</p><p class="font-bold text-gray-900 text-sm">Playa Total</p></div>
+                        <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><span class="material-symbols-outlined text-xl">camera</span></div>
+                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Fotos</p><p class="font-bold text-gray-900 text-sm">Imperdibles</p></div>
                     </div>
                 </div>
 
                 <section class="prose prose-lg max-w-none text-gray-600">
-                    <h3 class="font-display text-2xl font-bold text-gray-900 uppercase tracking-wide">Paraíso Natural en el Este</h3>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 uppercase tracking-wide">Descubrí el Paraíso Escondido</h3>
                     <p>
-                        Esta excursión es perfecta para los amantes de la playa y la naturaleza. Nos trasladamos en <strong>combis o colectivos</strong> confortables hacia el Puerto del Este, un paraíso natural ubicado a 60 km de Las Grutas.
+                        El Circuito del Golfo te lleva a conocer el lado más tranquilo y virgen de la zona: el <strong>Puerto de San Antonio Este</strong>. A solo 60 km de Las Grutas, este puerto de aguas profundas esconde playas que parecen sacadas del Caribe.
                     </p>
                     <p>
-                        A diferencia de las playas del centro, aquí encontrarás paisajes vírgenes, una tranquilidad absoluta y colores en el agua que te van a sorprender.
+                        Nuestra primera parada es <strong>Punta Perdices</strong>, famosa por sus aguas cristalinas y su arena blanca compuesta por miles de caracoles y conchillas. Es el lugar perfecto para relajarse y disfrutar del silencio.
                     </p>
 
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Las Joyas del Recorrido</h4>
+                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Naturaleza en Estado Puro</h4>
+                    <p>
+                        Recorreremos la costa visitando diferentes puntos de interés:
+                    </p>
                     <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Playa de las Conchillas:</strong> Un lugar único cubierto por un manto blanco de caracoles que crujen al caminar, contrastando con el azul profundo del mar. Ideal para explorar y sacar fotos.</li>
-                        <li><strong>Playa de Punta Perdices:</strong> Conocida como el "Caribe Patagónico". Disfrutá de sus aguas templadas, cristalinas y de escasa profundidad. Es el lugar perfecto para relajarse y conectar con la belleza natural.</li>
+                        <li><strong>Playa Las Conchillas:</strong> Una extensión infinita de conchillas blancas que contrastan con el azul intenso del mar.</li>
+                        <li><strong>Puerto SAE:</strong> Observaremos el movimiento del puerto internacional y, con suerte, lobos marinos y aves costeras.</li>
+                        <li><strong>Miradores:</strong> Puntos estratégicos para contemplar la inmensidad del Golfo San Matías.</li>
                     </ul>
 
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Un Día Inolvidable</h4>
+                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Ideal para el Relax</h4>
                     <p>
-                        El Circuito del Golfo te permite cambiar de aire y conocer otra cara de la costa rionegrina. Ya sea caminando sobre el colchón de conchillas o nadando en las aguas turquesas de Perdices, te llevás una experiencia visual y sensorial única.
-                    </p>
-                    <p>
-                        ¡Explora las impresionantes Playas del Este y disfrutá de un día inolvidable!
+                        A diferencia de las playas céntricas, aquí reina la paz. Es una excursión pensada para quienes quieren <strong>desconectar, caminar por la playa y disfrutar del paisaje</strong> sin apuros.
                     </p>
                 </section>
 
                 <section class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-sm">
                     <h3 class="font-display text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 tracking-wide uppercase">
-                        <span class="material-symbols-outlined text-primary">backpack</span> Ficha del Explorador
+                        <span class="material-symbols-outlined text-primary">tips_and_updates</span> Consejos
                     </h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <strong class="block text-gray-900 mb-1 text-base">Ropa de Playa</strong>
-                            <p class="text-gray-600 leading-relaxed">Traje de baño puesto, toalla, pareo y ropa fresca. ¡Vas a querer meterte al agua!</p>
+                            <strong class="block text-gray-900 mb-1 text-base">Calzado</strong>
+                            <p class="text-gray-600 leading-relaxed">Llevar calzado que se pueda mojar o sandalias cómodas. Caminar sobre las conchillas puede ser molesto descalzo.</p>
                         </div>
                         <div>
-                            <strong class="block text-gray-900 mb-1 text-base">Calzado</strong>
-                            <p class="text-gray-600 leading-relaxed">Ojotas o sandalias. Tené en cuenta que en Las Conchillas caminás sobre caracoles (puede pinchar un poco si vas descalzo).</p>
+                            <strong class="block text-gray-900 mb-1 text-base">Servicios</strong>
+                            <p class="text-gray-600 leading-relaxed">En el Puerto hay paradores gastronómicos excelentes para almorzar pescados y mariscos frescos.</p>
                         </div>
-                        <div class="col-span-full border-t border-gray-200 pt-4 mt-2">
-                            <strong class="block text-gray-900 mb-1 text-base">Protección y Comida</strong>
-                            <p class="text-gray-600 leading-relaxed">Sombrilla (si tenés), mucho protector solar y gorra. Recomendamos llevar agua y algún snack, aunque suele haber paradores en temporada.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="pt-6 border-t border-gray-100">
-                    <h4 class="font-display text-lg font-bold text-gray-900 mb-4 tracking-wide uppercase">Políticas de Cancelación y Devolución</h4>
-                    <div class="text-sm text-gray-700 space-y-3 leading-relaxed bg-white p-4 rounded-lg border border-gray-50 shadow-sm">
-                        <p><strong>1. Clima:</strong> No se suspende por razones meteorológicas salvo cancelación previa de la empresa.</p>
-                        <p><strong>2. Cancelación por la empresa:</strong> (Mecánica o fuerza mayor) Se reprograma o se devuelve el valor en vouchers (30%) o reintegro total si no inició.</p>
-                        <p><strong>3. Cancelación del pasajero:</strong>
-                            <br>• 72 hs antes: 75% reintegro.
-                            <br>• 48 hs antes: 50% reintegro.
-                            <br>• 24 hs antes: 25% reintegro.
-                            <br>• Menos de 12 hs: Sin devolución.
-                        </p>
-                        <p class="text-xs text-gray-500 mt-2">Los reintegros de pagos con tarjeta se realizan por anulación de compra. Pagos en efectivo se devuelven de la misma manera.</p>
                     </div>
                 </section>
 
@@ -128,35 +111,20 @@
                     <div class="text-center mb-6 pb-6 border-b border-gray-100">
                         <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Precio Online</p>
                         <div class="flex items-center justify-center gap-2">
-                            <span class="text-4xl font-display font-extrabold text-gray-900">$150.000</span>
+                            <span class="text-4xl font-display font-extrabold text-gray-900">$90.000</span>
                             <span class="text-sm font-medium text-gray-400">ARS</span>
                         </div>
                         <p class="text-xs text-gray-500 mt-1">Por Adulto</p>
-                        
-                        <div class="mt-4 bg-gray-50 rounded-lg p-3 text-left space-y-2">
-                            <div class="flex justify-between text-sm items-center">
-                                <span class="text-gray-600 font-medium">Menores (5-12)</span>
-                                <span class="font-bold text-gray-900">$100.000</span>
-                            </div>
-                            <div class="flex justify-between text-sm items-center">
-                                <span class="text-gray-600 font-medium">Menores de 5</span>
-                                <span class="font-bold text-primary text-xs uppercase">Consultar</span>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="space-y-3 mb-6">
                         <div class="flex items-center gap-3 text-sm text-gray-600">
                             <span class="material-symbols-outlined text-green-500">calendar_month</span>
-                            <span>Salidas: Consultar días</span>
+                            <span>Salidas: Martes, Jueves y Sábados</span>
                         </div>
                         <div class="flex items-center gap-3 text-sm text-gray-600">
                             <span class="material-symbols-outlined text-green-500">schedule</span>
                             <span>Duración: 5 horas</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">payments</span>
-                            <span>Pago: Transferencia / Efectivo</span>
                         </div>
                     </div>
 
@@ -164,182 +132,6 @@
                          <span class="material-symbols-outlined text-xl">chat</span>
                          Reservar por WhatsApp
                     </button>
-                    
-                    <p class="text-[11px] text-center text-gray-400 mt-4 leading-tight">
-                        Al tocar el botón podrás seleccionar fecha y cantidad de pasajeros. La reserva se confirma con el pago.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <div id="footer-container"></div>
-
-    <div class="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-gray-100 p-4 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] lg:hidden">
-        <button onclick="window.openBookingModal('Circuito del Golfo')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-colors uppercase tracking-widest text-xs">
-            <span class="material-symbols-outlined text-xl">chat</span>
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <div id="navbar-container"></div>
-
-    <header class="relative pt-20">
-        <div class="h-[55vh] w-full relative overflow-hidden group">
-            <img alt="Playa Punta Perdices" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="img/circuito-hero.webp"/>
-            <div class="absolute inset-0 bg-black/40"></div>            
-            <div class="absolute bottom-0 left-0 w-full p-6 pb-10">
-                <div class="max-w-6xl mx-auto px-4">
-                    <div class="flex flex-wrap gap-3 mb-3">
-                        <span class="bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">Caribe Patagónico</span>
-                        <span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
-                            <span class="material-symbols-outlined text-sm">beach_access</span> Puerto del Este
-                        </span>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-display text-white mb-2 drop-shadow-lg uppercase leading-none tracking-wider">
-                        Circuito del Golfo
-                    </h1>
-                    <p class="text-lg text-gray-200 font-medium max-w-2xl drop-shadow-md">
-                        Un paraíso natural a 60 km. Conchillas, Punta Perdices y aguas cristalinas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            
-            <div class="lg:col-span-8 space-y-10">
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-gray-100">
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><span class="material-symbols-outlined text-xl">schedule</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Duración</p><p class="font-bold text-gray-900 text-sm">5 horas</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-green-50 rounded-lg text-green-600"><span class="material-symbols-outlined text-xl">directions_bus</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Transporte</p><p class="font-bold text-gray-900 text-sm">Combis / Bus</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-purple-50 rounded-lg text-purple-600"><span class="material-symbols-outlined text-xl">water_drop</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Aguas</p><p class="font-bold text-gray-900 text-sm">Cristalinas</p></div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><span class="material-symbols-outlined text-xl">sunny</span></div>
-                        <div><p class="text-[10px] text-gray-500 font-bold uppercase">Actividad</p><p class="font-bold text-gray-900 text-sm">Playa Total</p></div>
-                    </div>
-                </div>
-
-                <section class="prose prose-lg max-w-none text-gray-600">
-                    <h3 class="font-display text-2xl font-bold text-gray-900 uppercase tracking-wide">Paraíso Natural en el Este</h3>
-                    <p>
-                        Esta excursión es perfecta para los amantes de la playa y la naturaleza. Nos trasladamos en <strong>combis o colectivos</strong> confortables hacia el Puerto del Este, un paraíso natural ubicado a 60 km de Las Grutas.
-                    </p>
-                    <p>
-                        A diferencia de las playas del centro, aquí encontrarás paisajes vírgenes, una tranquilidad absoluta y colores en el agua que te van a sorprender.
-                    </p>
-
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Las Joyas del Recorrido</h4>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Playa de las Conchillas:</strong> Un lugar único cubierto por un manto blanco de caracoles que crujen al caminar, contrastando con el azul profundo del mar. Ideal para explorar y sacar fotos.</li>
-                        <li><strong>Playa de Punta Perdices:</strong> Conocida como el "Caribe Patagónico". Disfrutá de sus aguas templadas, cristalinas y de escasa profundidad. Es el lugar perfecto para relajarse y conectar con la belleza natural.</li>
-                    </ul>
-
-                    <h4 class="font-display text-xl font-bold text-gray-900 pt-4 tracking-wide uppercase">Un Día Inolvidable</h4>
-                    <p>
-                        El Circuito del Golfo te permite cambiar de aire y conocer otra cara de la costa rionegrina. Ya sea caminando sobre el colchón de conchillas o nadando en las aguas turquesas de Perdices, te llevás una experiencia visual y sensorial única.
-                    </p>
-                    <p>
-                        ¡Explora las impresionantes Playas del Este y disfrutá de un día inolvidable!
-                    </p>
-                </section>
-
-                <section class="bg-gray-50 rounded-xl p-6 border border-gray-100 text-sm">
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 tracking-wide uppercase">
-                        <span class="material-symbols-outlined text-primary">backpack</span> Ficha del Explorador
-                    </h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <strong class="block text-gray-900 mb-1 text-base">Ropa de Playa</strong>
-                            <p class="text-gray-600 leading-relaxed">Traje de baño puesto, toalla, pareo y ropa fresca. ¡Vas a querer meterte al agua!</p>
-                        </div>
-                        <div>
-                            <strong class="block text-gray-900 mb-1 text-base">Calzado</strong>
-                            <p class="text-gray-600 leading-relaxed">Ojotas o sandalias. Tené en cuenta que en Las Conchillas caminás sobre caracoles (puede pinchar un poco si vas descalzo).</p>
-                        </div>
-                        <div class="col-span-full border-t border-gray-200 pt-4 mt-2">
-                            <strong class="block text-gray-900 mb-1 text-base">Protección y Comida</strong>
-                            <p class="text-gray-600 leading-relaxed">Sombrilla (si tenés), mucho protector solar y gorra. Recomendamos llevar agua y algún snack, aunque suele haber paradores en temporada.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="pt-6 border-t border-gray-100">
-                    <h4 class="font-display text-lg font-bold text-gray-900 mb-4 tracking-wide uppercase">Políticas de Cancelación y Devolución</h4>
-                    <div class="text-sm text-gray-700 space-y-3 leading-relaxed bg-white p-4 rounded-lg border border-gray-50 shadow-sm">
-                        <p><strong>1. Clima:</strong> No se suspende por razones meteorológicas salvo cancelación previa de la empresa.</p>
-                        <p><strong>2. Cancelación por la empresa:</strong> (Mecánica o fuerza mayor) Se reprograma o se devuelve el valor en vouchers (30%) o reintegro total si no inició.</p>
-                        <p><strong>3. Cancelación del pasajero:</strong>
-                            <br>• 72 hs antes: 75% reintegro.
-                            <br>• 48 hs antes: 50% reintegro.
-                            <br>• 24 hs antes: 25% reintegro.
-                            <br>• Menos de 12 hs: Sin devolución.
-                        </p>
-                        <p class="text-xs text-gray-500 mt-2">Los reintegros de pagos con tarjeta se realizan por anulación de compra. Pagos en efectivo se devuelven de la misma manera.</p>
-                    </div>
-                </section>
-
-            </div>
-
-            <div class="lg:col-span-4">
-                <div class="sticky top-24 bg-white p-6 rounded-2xl shadow-[0_5px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 z-10 hidden lg:block">
-                    <div class="text-center mb-6 pb-6 border-b border-gray-100">
-                        <p class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">Precio Online</p>
-                        <div class="flex items-center justify-center gap-2">
-                            <span class="text-4xl font-display font-extrabold text-gray-900">$150.000</span>
-                            <span class="text-sm font-medium text-gray-400">ARS</span>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Por Adulto</p>
-                        
-                        <div class="mt-4 bg-gray-50 rounded-lg p-3 text-left space-y-2">
-                            <div class="flex justify-between text-sm items-center">
-                                <span class="text-gray-600 font-medium">Menores (5-12)</span>
-                                <span class="font-bold text-gray-900">$100.000</span>
-                            </div>
-                            <div class="flex justify-between text-sm items-center">
-                                <span class="text-gray-600 font-medium">Menores de 5</span>
-                                <span class="font-bold text-primary text-xs uppercase">Consultar</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">calendar_month</span>
-                            <span>Salidas: Consultar días</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">schedule</span>
-                            <span>Duración: 5 horas</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <span class="material-symbols-outlined text-green-500">payments</span>
-                            <span>Pago: Transferencia / Efectivo</span>
-                        </div>
-                    </div>
-
-                    <button onclick="window.openBookingModal('Circuito del Golfo')" class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform hover:-translate-y-1 group uppercase tracking-widest text-xs">
-                         <span class="material-symbols-outlined text-xl">chat</span>
-                         Reservar por WhatsApp
-                    </button>
-                    
-                    <p class="text-[11px] text-center text-gray-400 mt-4 leading-tight">
-                        Al tocar el botón podrás seleccionar fecha y cantidad de pasajeros. La reserva se confirma con el pago.
-                    </p>
                 </div>
             </div>
 
@@ -358,6 +150,5 @@
     <div id="booking-modal-container"></div>
 
     <script type="module" src="./js/main.js"></script>
-
 </body>
 </html>

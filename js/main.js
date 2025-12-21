@@ -170,3 +170,38 @@ function initGallery() {
     }
     renderGallery();
 }
+
+// --- OPTIMIZACIÓN DEL PRELOADER ---
+document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById('preloader');
+    const heroImage = document.getElementById('portada-hero');
+
+    // Función para ocultar el preloader
+    const removePreloader = () => {
+        if (!preloader) return;
+        preloader.classList.add('opacity-0'); // Inicia desvanecimiento
+        setTimeout(() => {
+            preloader.style.display = 'none'; // Lo quita del DOM
+        }, 500); // Espera a que termine la transición CSS
+    };
+
+    // Promesa 1: Esperar a que las fuentes e iconos estén listos
+    const fontsReady = document.fonts.ready;
+
+    // Promesa 2: Esperar a que la imagen de portada cargue (si existe)
+    const imageReady = new Promise((resolve) => {
+        if (!heroImage) return resolve(); // Si no hay imagen, seguimos
+        if (heroImage.complete) return resolve(); // Si ya cargó desde caché
+        heroImage.onload = resolve;
+        heroImage.onerror = resolve; // Si falla, no bloqueamos la web
+    });
+
+    // Seguridad: Si por algo tarda más de 4 segs, abrimos igual (fallback)
+    const safetyTimeout = new Promise((resolve) => setTimeout(resolve, 4000));
+
+    // Cuando TODO esté listo (o salte el tiempo de seguridad), abrimos
+    Promise.race([
+        Promise.all([fontsReady, imageReady]),
+        safetyTimeout
+    ]).then(removePreloader);
+});
