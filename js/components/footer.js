@@ -65,19 +65,19 @@ export default function renderFooter(containerId = 'footer-container') {
                         <div class="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
                         <h3 class="font-display text-xl font-bold text-white mb-2 relative z-10">¿Listo para viajar?</h3>
                         <p class="text-gray-300 text-sm mb-4 relative z-10">Reservá tu lugar hoy mismo directamente por WhatsApp.</p>
-                        <a class="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg transition-colors relative z-10" href="${whatsappUrl}" target="_blank">
+                        <a class="w-full flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white font-bold py-3 rounded-lg transition-colors relative z-10" href="${whatsappUrl}" target="_blank">
                             <span class="material-symbols-outlined">chat</span>
                             Consultar Ahora
                         </a>
                     </div>
                     <div class="mt-6">
-                        <p class="text-gray-400 text-sm mb-2">Contacto Directo:</p>
+                        <p class="text-gray-300 text-sm mb-2">Contacto Directo:</p>
                         <a href="tel:${contactPhone.replace(/[\s-]/g, '')}" class="text-xl font-display text-white hover:text-primary transition-colors tracking-wide">${contactPhone}</a>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                 <p>© ${currentYear} Diseñado con precisión por <strong>Algoritmia</strong></p>
                 <div class="flex gap-6">
                     <a class="hover:text-white transition-colors" href="privacy">Privacidad</a>

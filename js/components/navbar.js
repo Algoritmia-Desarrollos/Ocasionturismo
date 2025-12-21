@@ -167,9 +167,11 @@ function initScrollEffect() {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 if (window.scrollY > 10) {
-                    nav.classList.add('shadow-md');
+                    nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    nav.classList.remove('bg-transparent');
                 } else {
-                    nav.classList.remove('shadow-md');
+                    nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
+                    nav.classList.add('bg-transparent');
                 }
                 ticking = false;
             });
