@@ -76,29 +76,6 @@
 
 <body class="bg-white text-text-main font-body antialiased selection:bg-primary selection:text-secondary">
 
-    <div id="page-preloader">
-        <div class="spinner"></div>
-    </div>
-
-    <script>
-        // Bloquear el scroll apenas inicia
-        document.body.classList.add('loading');
-
-        // Esperar a que TODA la página cargue (imágenes, iconos, estilos)
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('page-preloader');
-            
-            // Efecto de desvanecimiento
-            preloader.classList.add('hidden');
-
-            // Eliminarlo del DOM y reactivar scroll después de la animación (0.5s)
-            setTimeout(() => {
-                preloader.style.display = 'none';
-                document.body.classList.remove('loading');
-            }, 500);
-        });
-    </script>
-
     <div id="navbar-container"></div>
 
     <header class="relative h-[90dvh] flex items-center justify-center overflow-hidden">
