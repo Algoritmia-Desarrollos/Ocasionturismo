@@ -11,17 +11,6 @@ let currentExcursion = '';
 document.addEventListener('DOMContentLoaded', () => {
     // 2. Montar la Estructura Base
     renderNavbar('navbar-container');
-    
-    // Mobile Menu Logic
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
     renderFooter('footer-container');
     
     // 3. Montar Modal de Reservas (Solo si el contenedor existe)
