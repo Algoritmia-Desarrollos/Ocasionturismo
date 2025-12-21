@@ -31,6 +31,7 @@ window.openBookingModal = function(excursionName) {
     
     if(modal) {
         modal.classList.remove('hidden');
+        modal.classList.add('flex');
         setTimeout(() => {
             const inner = modal.querySelector('div');
             if(inner) {
@@ -52,6 +53,7 @@ window.closeBookingModal = function() {
             inner.classList.add('scale-95', 'opacity-0');
         }
         setTimeout(() => {
+            modal.classList.remove('flex');
             modal.classList.add('hidden');
         }, 300);
     }
@@ -118,6 +120,8 @@ function initGallery() {
         grid.innerHTML = '';
         const filteredImages = allImages.filter(img => img.category === currentCategory);
         const imagesToShow = filteredImages.slice(0, visibleCount);
+        
+        const fragment = document.createDocumentFragment();
 
         imagesToShow.forEach((img, index) => {
             const div = document.createElement('div');
@@ -130,8 +134,9 @@ function initGallery() {
                     <p class="text-white font-display uppercase tracking-widest text-sm text-center px-2 font-bold select-none">${img.alt}</p>
                 </div>
             `;
-            grid.appendChild(div);
+            fragment.appendChild(div);
         });
+        grid.appendChild(fragment);
         
         if (loadMoreBtn) {
             if (visibleCount >= filteredImages.length) {

@@ -2,7 +2,7 @@
 
 export default function renderBookingModal(containerId = 'booking-modal-container') {
     const html = `
-    <div id="booking-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all duration-300">
+    <div id="booking-modal" class="hidden fixed inset-0 z-[60] items-center justify-center bg-black/60 backdrop-blur-sm p-4 transition-all duration-300">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform scale-95 opacity-0 transition-all duration-300">
             <div class="bg-primary p-4 flex justify-between items-center">
                 <h3 class="text-gray-900 font-display text-xl uppercase tracking-wide">Configurá tu Reserva</h3>
