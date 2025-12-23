@@ -92,23 +92,26 @@ function initGallery() {
 
     // Aquí cambiamos 'city' por 'circuito'
     const allImages = [
-        { src: 'img/1.png', category: 'salinas', alt: 'Atardecer en Salinas' },
-        { src: 'img/1-5.webp', category: 'salinas', alt: 'Parvas de Sal' },
-        { src: 'img/1-6.webp', category: 'salinas', alt: 'Cena bajo las estrellas' },
-        { src: 'img/1-7.webp', category: 'salinas', alt: 'Brindis Mágico' },
-        { src: 'img/2.png', category: 'fuerte', alt: 'Camión 6x6 Fuerte' },
-        { src: 'img/2-4.webp', category: 'fuerte', alt: 'Subiendo médanos' },
-        { src: 'img/2-5.webp', category: 'fuerte', alt: 'Expedición Militar' },
-        { src: 'img/2-6.webp', category: 'fuerte', alt: 'Vistas Panorámicas' },
-        { src: 'img/3.png', category: 'safari', alt: 'Camión Safari' },
-        { src: 'img/3-4.webp', category: 'safari', alt: 'Villa de los Pulperos' },
-        { src: 'img/3-5.webp', category: 'safari', alt: 'Naturaleza Pura' },
-        { src: 'img/3-6.webp', category: 'safari', alt: 'Aventura 4x4' },
-        // UPDATED CATEGORY
-        { src: 'img/4.png', category: 'circuito', alt: 'Punta Perdiz' },
-        { src: 'img/4-4.webp', category: 'circuito', alt: 'Aguas Turquesas' },
-        { src: 'img/4-5.webp', category: 'circuito', alt: 'Lobería' },
-        { src: 'img/4-6.webp', category: 'circuito', alt: 'Puerto del Este' },
+        { src: 'img/Salinas del gualicho (1).jpeg', category: 'salinas', alt: 'Atardecer en Salinas' },
+        { src: 'img/Salinas del gualicho (2).jpeg', category: 'salinas', alt: 'Inmensidad del Salar' },
+        { src: 'img/Salinas del gualicho (3).jpeg', category: 'salinas', alt: 'Brindis en el Gualicho' },
+        { src: 'img/Fuerte argentino (1).jpeg', category: 'fuerte', alt: 'Expedición 4x4' },
+        { src: 'img/Fuerte argentino (2).jpeg', category: 'fuerte', alt: 'Meseta del Fuerte' },
+        { src: 'img/Fuerte argentino (3).jpeg', category: 'fuerte', alt: 'Cueva El Sótano' },
+        { src: 'img/Fuerte argentino (4).jpeg', category: 'fuerte', alt: 'Vistas Panorámicas' },
+        { src: 'img/Fuerte argentino (5).jpeg', category: 'fuerte', alt: 'Aventura Off-road' },
+        { src: 'img/Fuerte argentino (6).jpeg', category: 'fuerte', alt: 'Restinga y Fauna' },
+        { src: 'img/Fuerte argentino (7).jpeg', category: 'fuerte', alt: 'Trekking en el Fuerte' },
+        { src: 'img/safari de la costa (1).jpeg', category: 'safari', alt: 'Safari 4x4' },
+        { src: 'img/safari de la costa (2).jpeg', category: 'safari', alt: 'Cañadón de las Ostras' },
+        { src: 'img/safari de la costa (3).jpeg', category: 'safari', alt: 'Piedras Coloradas' },
+        { src: 'img/safari de la costa (4).jpeg', category: 'safari', alt: 'Costa Salvaje' },
+        { src: 'img/safari de la costa (5).jpeg', category: 'safari', alt: 'Exploración Costera' },
+        { src: 'img/safari de la costa (6).jpeg', category: 'safari', alt: 'Naturaleza Pura' },
+        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Punta Perdices' },
+        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Aguas Turquesas' },
+        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Playa Las Conchillas' },
+        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Puerto del Este' },
     ];
     
     const loadMoreBtn = document.getElementById('load-more-btn');
