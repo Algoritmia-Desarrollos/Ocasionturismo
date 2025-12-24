@@ -26,6 +26,45 @@
     </noscript>
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "Excursión Salinas del Gualicho",
+      "description": "Excursión a Salinas del Gualicho al atardecer con brindis y visita al museo de la sal.",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Ocasión Turismo",
+        "url": "https://ocasionturismo.com"
+      },
+      "touristType": [
+        "AdventureTravel",
+        "CulturalTourism"
+      ],
+      "itinerary": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Museo de la Sal"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Brindis al Atardecer"
+          }
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://ocasionturismo.com/salinas",
+        "price": "120000",
+        "priceCurrency": "ARS"
+      }
+    }
+    </script>
 </head>
 <body class="antialiased text-gray-900 bg-white">
     <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">

@@ -26,6 +26,50 @@
     </noscript>
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      "name": "Excursión Fuerte Argentino",
+      "description": "Aventura extrema en 4x4 al Fuerte Argentino. Explorá cuevas, leyendas templarias y paisajes increíbles.",
+      "provider": {
+        "@type": "TravelAgency",
+        "name": "Ocasión Turismo",
+        "url": "https://ocasionturismo.com"
+      },
+      "touristType": [
+        "AdventureTravel",
+        "CulturalTourism"
+      ],
+      "itinerary": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Cueva El Sótano"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Meseta Fuerte Argentino"
+          },
+           {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Restinga y Snorkeling (Marea baja)"
+          }
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "url": "https://ocasionturismo.com/fuerte",
+        "price": "150000",
+        "priceCurrency": "ARS"
+      }
+    }
+    </script>
 </head>
 <body class="antialiased text-gray-900 bg-white">
     <div id="preloader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
