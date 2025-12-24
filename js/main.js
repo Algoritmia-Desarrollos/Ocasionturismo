@@ -153,11 +153,11 @@ function initGallery() {
     tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             tabButtons.forEach(b => {
-                b.classList.remove('bg-primary', 'text-gray-900', 'border-transparent');
-                b.classList.add('border-white/30', 'text-white');
+                b.classList.remove('bg-primary', 'text-gray-900', 'border-transparent', 'hover:bg-yellow-400');
+                b.classList.add('border-white/30', 'text-white', 'hover:bg-white/10');
             });
-            e.target.classList.remove('border-white/30', 'text-white');
-            e.target.classList.add('bg-primary', 'text-gray-900', 'border-transparent');
+            e.target.classList.remove('border-white/30', 'text-white', 'hover:bg-white/10');
+            e.target.classList.add('bg-primary', 'text-gray-900', 'border-transparent', 'hover:bg-yellow-400');
             
             currentCategory = e.target.dataset.category;
             visibleCount = 8;
