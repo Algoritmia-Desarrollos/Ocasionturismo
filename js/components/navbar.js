@@ -158,6 +158,8 @@ function initMobileMenu() {
 }
 
 function initScrollEffect() {
+    const navbar = document.getElementById('navbar');
+    const logo = document.getElementById('navbar-logo');
     const nav = document.querySelector('nav');
     if (!nav) return;
 
@@ -165,22 +167,23 @@ function initScrollEffect() {
     let isScrolled = false;
 
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const currentScroll = window.scrollY;
-                
-                if (currentScroll > 10 && !isScrolled) {
-                    nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md');
-                    nav.classList.remove('bg-transparent');
-                    isScrolled = true;
-                } else if (currentScroll <= 10 && isScrolled) {
-                    nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md');
-                    nav.classList.add('bg-transparent');
-                    isScrolled = false;
-                }
-                ticking = false;
-            });
-            ticking = true;
+        // Si bajamos más de 50px Y todavía no hemos cambiado el estado
+        if (window.scrollY > 50 && !isScrolled) {
+            isScrolled = true; // Marcamos como "scrolleado"
+            
+            navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+            navbar.classList.add('bg-white', 'text-gray-900', 'shadow-md', 'py-2');
+            
+            if (logo) logo.src = 'img/logolargo.webp'; // Logo oscuro
+        } 
+        // Si subimos a menos de 50px Y el estado estaba como "scrolleado"
+        else if (window.scrollY <= 50 && isScrolled) {
+            isScrolled = false; // Marcamos como "arriba"
+            
+            navbar.classList.add('bg-transparent', 'text-white', 'py-4');
+            navbar.classList.remove('bg-white', 'text-gray-900', 'shadow-md', 'py-2');
+            
+            if (logo) logo.src = 'img/logolargoblanco.webp'; // Logo blanco
         }
     });
 }
