@@ -17,7 +17,9 @@ export default function renderFooter(containerId = 'footer-container') {
                         <img src="img/logolargoblanco.webp" alt="Ocasión Turismo" width="180" height="60" class="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity">
                     </a>
                     <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                        Somos una empresa dedicada a mostrarte lo mejor de la Patagonia Argentina con pasión y profesionalismo. Alojamiento propio en Las Grutas.
+                        Empresa de Viajes y Turismo. Expediciones 4x4 y experiencias únicas.
+
+.
                     </p>
                     <div class="flex gap-4">
                          <a href="${instagramUrl}" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-primary hover:text-gray-900 transition-all group" aria-label="Instagram">
