@@ -92,9 +92,11 @@ function initGallery() {
 
     // Aquí cambiamos 'city' por 'circuito'
     const allImages = [
-        { src: 'img/Salinas del gualicho (1).jpeg', category: 'salinas', alt: 'Atardecer en Salinas' },
-        { src: 'img/Salinas del gualicho (2).jpeg', category: 'salinas', alt: 'Inmensidad del Salar' },
-        { src: 'img/Salinas del gualicho (3).jpeg', category: 'salinas', alt: 'Brindis en el Gualicho' },
+        { src: 'img/Salinas del gualicho (1).jpeg', category: 'salinas', alt: 'Inmensidad del Salar' },
+        { src: 'img/Salinas del gualicho (3).jpeg', category: 'salinas', alt: 'Atardecer en Salinas' },
+        { src: 'img/salinas2.jpg', category: 'salinas', alt: 'Inmensidad del Salar' },
+        { src: 'img/salinas3.webp', category: 'salinas', alt: 'Atardecer en Salinas' },
+
         { src: 'img/Fuerte argentino (1).jpeg', category: 'fuerte', alt: 'Expedición 4x4' },
         { src: 'img/Fuerte argentino (2).jpeg', category: 'fuerte', alt: 'Meseta del Fuerte' },
         { src: 'img/Fuerte argentino (3).jpeg', category: 'fuerte', alt: 'Cueva El Sótano' },
@@ -108,10 +110,11 @@ function initGallery() {
         { src: 'img/safari de la costa (4).jpeg', category: 'safari', alt: 'Costa Salvaje' },
         { src: 'img/safari de la costa (5).jpeg', category: 'safari', alt: 'Exploración Costera' },
         { src: 'img/safari de la costa (6).jpeg', category: 'safari', alt: 'Naturaleza Pura' },
-        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Punta Perdices' },
-        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Aguas Turquesas' },
-        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Playa Las Conchillas' },
-        { src: 'img/circuito-hero.webp', category: 'circuito', alt: 'Puerto del Este' },
+        { src: 'img/perdices3.jpg', category: 'circuito', alt: 'Punta Perdices' },
+        { src: 'img/punta-perdices.webp', category: 'circuito', alt: 'Aguas Turquesas' },
+                { src: 'img/conchillas2.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
+                        { src: 'img/playadelasconchillas.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
+
     ];
     
     const loadMoreBtn = document.getElementById('load-more-btn');
@@ -128,14 +131,15 @@ function initGallery() {
 
         imagesToShow.forEach((img, index) => {
             const div = document.createElement('div');
-            div.className = 'relative rounded-xl overflow-hidden group shadow-lg aspect-[4/3] cursor-pointer bg-gray-100 animate-fade-in-up';
+            div.className = 'relative rounded-xl overflow-hidden group shadow-lg aspect-[4/3] cursor-pointer bg-gray-100 animate-fade-in-up focus:outline-none';
+            div.setAttribute('tabindex', '0');
             div.style.animationDelay = `${index * 50}ms`;
             
             div.innerHTML = `
-                <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
-                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-white font-display uppercase tracking-widest text-sm text-center px-2 font-bold select-none">${img.alt}</p>
-                </div>
+                <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-active:scale-125 group-focus:scale-125" loading="lazy">
+
+
+
             `;
             fragment.appendChild(div);
         });
@@ -189,7 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Promesa 1: Esperar a que las fuentes e iconos estén listos
-    const fontsReady = document.fonts.ready;
+    const fontsReady = Promise.all([
+        document.fonts.ready,
+        document.fonts.load('1em "Material Symbols Outlined"')
+    ]).catch((e) => {
+        console.warn('Font loading issue:', e);
+        return true;
+    });
 
     // Promesa 2: Esperar a que la imagen de portada cargue (si existe)
     const imageReady = new Promise((resolve) => {
@@ -206,5 +216,5 @@ document.addEventListener("DOMContentLoaded", () => {
     Promise.race([
         Promise.all([fontsReady, imageReady]),
         safetyTimeout
-    ]).then(removePreloader);
+    ]).finally(removePreloader);
 });
