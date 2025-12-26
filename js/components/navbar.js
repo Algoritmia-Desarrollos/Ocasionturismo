@@ -10,7 +10,7 @@ export default function renderNavbar(containerId = 'navbar-container') {
                 
                 <div class="flex items-center">
                     <a class="flex items-center gap-2 group focus:outline-none" href="./">
-                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" style="width: auto; height: 56px;" width="180" height="60" class="h-14 md:h-20 w-auto object-contain">
+                        <img src="img/logolargo.webp" alt="Ocasión Turismo Logo" style="width: auto; height: 68px;" width="180" height="60" class="h-14 md:h-20 w-auto object-contain">
                     </a>
                 </div>
 
@@ -160,11 +160,30 @@ function initMobileMenu() {
 function initScrollEffect() {
     const navbar = document.getElementById('navbar');
     const logo = document.getElementById('navbar-logo');
-    const nav = document.querySelector('nav');
-    if (!nav) return;
+    
+    // Safety check: if navbar doesn't exist, stop.
+    if (!navbar) return;
 
-    let ticking = false;
+    // Check if we are on the homepage (only homepage has the video header)
+    const isHomePage = document.querySelector('header video') !== null;
+
+    // If not homepage, ensure navbar is solid white and exit
+    if (!isHomePage) {
+        navbar.classList.remove('bg-transparent', 'text-white', 'py-4');
+        navbar.classList.add('bg-white', 'text-gray-900', 'shadow-md', 'py-2');
+        if (logo) logo.src = 'img/logolargo.webp';
+        return;
+    }
+
+    // Initial state for homepage
     let isScrolled = false;
+
+    // Apply initial transparent state if at top
+    if (window.scrollY <= 50) {
+        navbar.classList.add('bg-transparent', 'text-white', 'py-4');
+        navbar.classList.remove('bg-white', 'text-gray-900', 'shadow-md', 'py-2');
+        if (logo) logo.src = 'img/logolargoblanco.webp';
+    }
 
     window.addEventListener('scroll', () => {
         // Si bajamos más de 50px Y todavía no hemos cambiado el estado
