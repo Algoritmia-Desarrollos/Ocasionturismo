@@ -9,19 +9,49 @@ import renderBookingModal from './components/booking-modal.js';
 let currentExcursion = '';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 2. Montar la Estructura Base
+    // --- A. RENDERIZADO DE COMPONENTES ---
     renderNavbar('navbar-container');
     renderFooter('footer-container');
     
-    // 3. Montar Modal de Reservas (Solo si el contenedor existe)
     if(document.getElementById('booking-modal-container')) {
         renderBookingModal('booking-modal-container');
     }
 
-    // 4. Inicializar Galería (Solo si existe en el Home)
+    // --- B. INICIALIZAR FUNCIONALIDADES ESPECÍFICAS ---
+    
+    // 1. Galería (Solo si existe)
     if(document.getElementById('gallery-grid')) {
         initGallery();
     }
+
+    // 2. Observer para el Botón Flotante
+    const stickyFooter = document.getElementById('sticky-footer');
+    const targetCard = document.getElementById('booking-card');
+
+    if (stickyFooter && targetCard) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // --- CASO: VEO LA TARJETA (OCULTAR BOTÓN FLOTANTE) ---
+                    // 1. Le sacamos la clase que lo mantiene visible
+                    stickyFooter.classList.remove('translate-y-0');
+                    // 2. Le agregamos la clase que lo baja (y opacity para suavizar)
+                    stickyFooter.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+                } else {
+                    // --- CASO: NO VEO LA TARJETA (MOSTRAR BOTÓN FLOTANTE) ---
+                    // 1. Sacamos las clases de oculto
+                    stickyFooter.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+                    // 2. Volvemos a ponerlo en su lugar
+                    stickyFooter.classList.add('translate-y-0');
+                }
+            });
+        }, { threshold: 0.1 }); // Se dispara al ver apenas un 10% de la tarjeta
+
+        observer.observe(targetCard);
+    }
+
+    // --- C. LÓGICA DEL PRELOADER ---
+    handlePreloader();
 });
 
 // --- LÓGICA DE RESERVAS (GLOBAL) ---
@@ -32,8 +62,9 @@ window.openBookingModal = function(excursionName) {
     if(modal) {
         modal.classList.remove('hidden');
         modal.classList.add('flex');
+        // Pequeño timeout para permitir que el navegador procese el display:flex antes de la transición
         setTimeout(() => {
-            const inner = modal.querySelector('div');
+            const inner = modal.querySelector('div'); // Selecciona la tarjeta blanca
             if(inner) {
                 inner.classList.remove('scale-95', 'opacity-0');
                 inner.classList.add('scale-100', 'opacity-100');
@@ -52,6 +83,7 @@ window.closeBookingModal = function() {
             inner.classList.remove('scale-100', 'opacity-100');
             inner.classList.add('scale-95', 'opacity-0');
         }
+        // Esperamos la duración de la transición (300ms) antes de ocultarlo
         setTimeout(() => {
             modal.classList.remove('flex');
             modal.classList.add('hidden');
@@ -70,7 +102,6 @@ window.sendToWhatsapp = function() {
 
     const text = `Hola! Quiero reservar *${currentExcursion}*.\n\n📅 Fecha estimada: ${date}\n👥 Adultos: ${adults}\n👶 Menores: ${minors}\n\nQuedo a la espera de confirmación y datos para el pago.`;
     
-    // 📞 NUEVO NÚMERO ACTUALIZADO
     const phone = "5492920293722"; 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
@@ -78,6 +109,7 @@ window.sendToWhatsapp = function() {
     window.closeBookingModal();
 };
 
+// Cierra el modal si se hace click en el fondo oscuro (pero no en la tarjeta)
 window.addEventListener('click', (e) => {
     const modal = document.getElementById('booking-modal');
     if (modal && e.target === modal) {
@@ -90,7 +122,6 @@ function initGallery() {
     const grid = document.getElementById('gallery-grid');
     if (!grid) return; 
 
-    // Aquí cambiamos 'city' por 'circuito'
     const allImages = [
         { src: 'img/Salinas del gualicho (1).jpeg', category: 'salinas', alt: 'Inmensidad del Salar' },
         { src: 'img/Salinas del gualicho (3).jpeg', category: 'salinas', alt: 'Atardecer en Salinas' },
@@ -104,17 +135,18 @@ function initGallery() {
         { src: 'img/Fuerte argentino (5).jpeg', category: 'fuerte', alt: 'Aventura Off-road' },
         { src: 'img/Fuerte argentino (6).jpeg', category: 'fuerte', alt: 'Restinga y Fauna' },
         { src: 'img/Fuerte argentino (7).jpeg', category: 'fuerte', alt: 'Trekking en el Fuerte' },
+
         { src: 'img/safari de la costa (1).jpeg', category: 'safari', alt: 'Safari 4x4' },
         { src: 'img/safari de la costa (2).jpeg', category: 'safari', alt: 'Cañadón de las Ostras' },
         { src: 'img/safari de la costa (3).jpeg', category: 'safari', alt: 'Piedras Coloradas' },
         { src: 'img/safari de la costa (4).jpeg', category: 'safari', alt: 'Costa Salvaje' },
         { src: 'img/safari de la costa (5).jpeg', category: 'safari', alt: 'Exploración Costera' },
         { src: 'img/safari de la costa (6).jpeg', category: 'safari', alt: 'Naturaleza Pura' },
+
         { src: 'img/perdices3.jpg', category: 'circuito', alt: 'Punta Perdices' },
         { src: 'img/punta-perdices.webp', category: 'circuito', alt: 'Aguas Turquesas' },
-                { src: 'img/conchillas2.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
-                        { src: 'img/playadelasconchillas.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
-
+        { src: 'img/conchillas2.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
+        { src: 'img/playadelasconchillas.jpg', category: 'circuito', alt: 'Playas de las Conchillas' },
     ];
     
     const loadMoreBtn = document.getElementById('load-more-btn');
@@ -137,9 +169,7 @@ function initGallery() {
             
             div.innerHTML = `
                 <img src="${img.src}" alt="${img.alt}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-active:scale-125 group-focus:scale-125" loading="lazy">
-
-
-
+                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             `;
             fragment.appendChild(div);
         });
@@ -156,15 +186,17 @@ function initGallery() {
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
+            // Resetear estilos de todos los botones
             tabButtons.forEach(b => {
                 b.classList.remove('bg-primary', 'text-gray-900', 'border-transparent', 'hover:bg-yellow-400');
                 b.classList.add('border-white/30', 'text-white', 'hover:bg-white/10');
             });
+            // Activar botón clickeado
             e.target.classList.remove('border-white/30', 'text-white', 'hover:bg-white/10');
             e.target.classList.add('bg-primary', 'text-gray-900', 'border-transparent', 'hover:bg-yellow-400');
             
             currentCategory = e.target.dataset.category;
-            visibleCount = 8;
+            visibleCount = 8; // Resetear contador al cambiar categoría
             renderGallery();
         });
     });
@@ -178,21 +210,19 @@ function initGallery() {
     renderGallery();
 }
 
-// --- OPTIMIZACIÓN DEL PRELOADER ---
-document.addEventListener("DOMContentLoaded", () => {
+// --- FUNCIÓN DE PRELOADER ---
+function handlePreloader() {
     const preloader = document.getElementById('preloader');
     const heroImage = document.getElementById('portada-hero');
 
-    // Función para ocultar el preloader
     const removePreloader = () => {
         if (!preloader) return;
-        preloader.classList.add('opacity-0'); // Inicia desvanecimiento
+        preloader.classList.add('opacity-0');
         setTimeout(() => {
-            preloader.style.display = 'none'; // Lo quita del DOM
-        }, 500); // Espera a que termine la transición CSS
+            preloader.style.display = 'none';
+        }, 500);
     };
 
-    // Promesa 1: Esperar a que las fuentes e iconos estén listos
     const fontsReady = Promise.all([
         document.fonts.ready,
         document.fonts.load('1em "Material Symbols Outlined"')
@@ -201,20 +231,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     });
 
-    // Promesa 2: Esperar a que la imagen de portada cargue (si existe)
     const imageReady = new Promise((resolve) => {
-        if (!heroImage) return resolve(); // Si no hay imagen, seguimos
-        if (heroImage.complete) return resolve(); // Si ya cargó desde caché
+        if (!heroImage) return resolve();
+        if (heroImage.complete) return resolve();
         heroImage.onload = resolve;
-        heroImage.onerror = resolve; // Si falla, no bloqueamos la web
+        heroImage.onerror = resolve;
     });
 
-    // Seguridad: Si por algo tarda más de 4 segs, abrimos igual (fallback)
     const safetyTimeout = new Promise((resolve) => setTimeout(resolve, 4000));
 
-    // Cuando TODO esté listo (o salte el tiempo de seguridad), abrimos
     Promise.race([
         Promise.all([fontsReady, imageReady]),
         safetyTimeout
     ]).finally(removePreloader);
-});
+}
