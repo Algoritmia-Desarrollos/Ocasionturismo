@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --- INICIO DEL ARREGLO ANDROID --- */
+/* Esto le prohíbe al celular cambiar el tamaño de letra por su cuenta */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%; /* Chrome/Android */
+    -moz-text-size-adjust: 100%;    /* Firefox Mobile */
+    text-size-adjust: 100%;         /* Estándar */
+  }
+  
+  /* Arreglo de seguridad para imágenes y videos en móviles */
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* --- FIN DEL ARREGLO ANDROID --- */
+
 /* Tus estilos custom */
 html { scroll-behavior: smooth; }
 
