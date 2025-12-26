@@ -1,4 +1,3 @@
-videos/portada.mp4
-videos/portada.webm
-node_modules
+node_modules/
+videos/
 img/
